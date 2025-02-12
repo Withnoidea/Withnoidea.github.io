@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Vue1-3天学习</title>
+      <link href="/2025/02/13/Vue1-3%E5%A4%A9%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2025/02/13/Vue1-3%E5%A4%A9%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue1-3天学习"><a href="#Vue1-3天学习" class="headerlink" title="Vue1-3天学习"></a>Vue1-3天学习</h1><h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><h3 id="1-1-学习内容"><a href="#1-1-学习内容" class="headerlink" title="1.1 学习内容"></a>1.1 学习内容</h3><h3 id="认识-Vue"><a href="#认识-Vue" class="headerlink" title="认识 Vue"></a>认识 Vue</h3><p>Vue是一款用于构建用户界面的JavaScript框架；它基于标准 HTML、CSS和 JavaScript构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面</p><h3 id="MVVM-工作原理"><a href="#MVVM-工作原理" class="headerlink" title="MVVM 工作原理"></a>MVVM 工作原理</h3><p>MVVM 指的是Model、View和ViewModel<br>● Model：页面渲染用到的数据源<br>● View：页面所渲染的 DOM 结构<br>● ViewModel：表示 vue 的实例</p><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250213010951.png" alt="20250213010951"></p><p>● 当数据源发生变化时，会被 VM 监听到，VM 会根据最新的数据源自动更新页面的结构<br>● 当表单元素的值发生变化时，也会被 VM 监听到，VM 会把变化过后最新的值自动同步到 Model 数据源中</p><h3 id="Vue-的组件可以按两种不同的风格书写"><a href="#Vue-的组件可以按两种不同的风格书写" class="headerlink" title="Vue 的组件可以按两种不同的风格书写"></a>Vue 的组件可以按两种不同的风格书写</h3><p>● 选项式 API<br>● 组合式 API<br>选项式 API<br>● 使用选项式 API，我们可以用包含多个选项的对象来描述组件的逻辑，例如data、methods和 mounted<br>● 选项所定义的属性都会暴露在函数内部的this上，它会指向当前的组件实例<br>组合式 API<br>● 通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑<br>● 在单文件组件中，组合式 API 通常会与<script setup>搭配使用<br>● 这个setup属性是一个标识，告诉 Vue 需要在编译时进行一些处理，让我们可以更简洁地使用组合式 API<br>● <script setup>中的导入和顶层变量/函数都能够在模板中直接使用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+          <category> Web前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>达芬奇学习</title>
       <link href="/2025/01/09/%E8%BE%BE%E8%8A%AC%E5%A5%87%E5%AD%A6%E4%B9%A0/"/>
       <url>/2025/01/09/%E8%BE%BE%E8%8A%AC%E5%A5%87%E5%AD%A6%E4%B9%A0/</url>
