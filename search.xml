@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Vue1-3天学习</title>
-      <link href="/2025/02/13/Vue1-3%E5%A4%A9%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2025/02/13/Vue1-3%E5%A4%A9%E5%AD%A6%E4%B9%A0/</url>
+      <title>Vue</title>
+      <link href="/2025/02/13/Vue/"/>
+      <url>/2025/02/13/Vue/</url>
       
-        <content type="html"><![CDATA[<h1 id="Vue1-3天学习"><a href="#Vue1-3天学习" class="headerlink" title="Vue1-3天学习"></a>Vue1-3天学习</h1><h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><h3 id="1-1-学习内容"><a href="#1-1-学习内容" class="headerlink" title="1.1 学习内容"></a>1.1 学习内容</h3><h3 id="认识-Vue"><a href="#认识-Vue" class="headerlink" title="认识 Vue"></a>认识 Vue</h3><p>Vue是一款用于构建用户界面的JavaScript框架；它基于标准 HTML、CSS和 JavaScript构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面</p><h3 id="MVVM-工作原理"><a href="#MVVM-工作原理" class="headerlink" title="MVVM 工作原理"></a>MVVM 工作原理</h3><p>MVVM 指的是Model、View和ViewModel<br>● Model：页面渲染用到的数据源<br>● View：页面所渲染的 DOM 结构<br>● ViewModel：表示 vue 的实例</p><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250213010951.png" alt="20250213010951"></p><p>● 当数据源发生变化时，会被 VM 监听到，VM 会根据最新的数据源自动更新页面的结构<br>● 当表单元素的值发生变化时，也会被 VM 监听到，VM 会把变化过后最新的值自动同步到 Model 数据源中</p><h3 id="Vue-的组件可以按两种不同的风格书写"><a href="#Vue-的组件可以按两种不同的风格书写" class="headerlink" title="Vue 的组件可以按两种不同的风格书写"></a>Vue 的组件可以按两种不同的风格书写</h3><p>● 选项式 API<br>● 组合式 API<br>选项式 API<br>● 使用选项式 API，我们可以用包含多个选项的对象来描述组件的逻辑，例如data、methods和 mounted<br>● 选项所定义的属性都会暴露在函数内部的this上，它会指向当前的组件实例<br>组合式 API<br>● 通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑<br>● 在单文件组件中，组合式 API 通常会与script setup搭配使用<br>● 这个setup属性是一个标识，告诉 Vue 需要在编译时进行一些处理，让我们可以更简洁地使用组合式 API<br>● script setup 中的导入和顶层变量&#x2F;函数都能够在模板中直接使用</p><h3 id="小成果1"><a href="#小成果1" class="headerlink" title="小成果1"></a>小成果1</h3><p>编写建议博客<br><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250213015125.png" alt="20250213015125"><br>登录的实现<br><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250214015536.png" alt="20250214015536"></p><h3 id="组件的全局注册和局部注册"><a href="#组件的全局注册和局部注册" class="headerlink" title="组件的全局注册和局部注册"></a>组件的全局注册和局部注册</h3><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250216003652.png" alt="20250216003652"><br><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250216003709.png" alt="20250216003709"></p><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250217235659.png" alt="20250217235659"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><h3 id="1-1-学习内容"><a href="#1-1-学习内容" class="headerlink" title="1.1 学习内容"></a>1.1 学习内容</h3><h3 id="认识-Vue"><a href="#认识-Vue" class="headerlink" title="认识 Vue"></a>认识 Vue</h3><p>Vue是一款用于构建用户界面的JavaScript框架；它基于标准 HTML、CSS和 JavaScript构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面</p><h3 id="MVVM-工作原理"><a href="#MVVM-工作原理" class="headerlink" title="MVVM 工作原理"></a>MVVM 工作原理</h3><p>MVVM 指的是Model、View和ViewModel<br>● Model：页面渲染用到的数据源<br>● View：页面所渲染的 DOM 结构<br>● ViewModel：表示 vue 的实例</p><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250213010951.png" alt="20250213010951"></p><p>● 当数据源发生变化时，会被 VM 监听到，VM 会根据最新的数据源自动更新页面的结构<br>● 当表单元素的值发生变化时，也会被 VM 监听到，VM 会把变化过后最新的值自动同步到 Model 数据源中</p><h3 id="Vue-的组件可以按两种不同的风格书写"><a href="#Vue-的组件可以按两种不同的风格书写" class="headerlink" title="Vue 的组件可以按两种不同的风格书写"></a>Vue 的组件可以按两种不同的风格书写</h3><p>● 选项式 API<br>● 组合式 API<br>选项式 API<br>● 使用选项式 API，我们可以用包含多个选项的对象来描述组件的逻辑，例如data、methods和 mounted<br>● 选项所定义的属性都会暴露在函数内部的this上，它会指向当前的组件实例<br>组合式 API<br>● 通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑<br>● 在单文件组件中，组合式 API 通常会与script setup搭配使用<br>● 这个setup属性是一个标识，告诉 Vue 需要在编译时进行一些处理，让我们可以更简洁地使用组合式 API<br>● script setup 中的导入和顶层变量&#x2F;函数都能够在模板中直接使用</p><h3 id="小成果1"><a href="#小成果1" class="headerlink" title="小成果1"></a>小成果1</h3><p>编写建议博客<br><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250213015125.png" alt="20250213015125"><br>登录的实现<br><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250214015536.png" alt="20250214015536"></p><h3 id="组件的全局注册和局部注册"><a href="#组件的全局注册和局部注册" class="headerlink" title="组件的全局注册和局部注册"></a>组件的全局注册和局部注册</h3><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250216003652.png" alt="20250216003652"></p><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/20250217235659.png" alt="20250217235659"></p>]]></content>
       
       
       <categories>
@@ -203,7 +203,7 @@
       <link href="/2024/11/27/%E6%97%A5%E8%AE%B0/"/>
       <url>/2024/11/27/%E6%97%A5%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<h1 id="2024-11-27"><a href="#2024-11-27" class="headerlink" title="2024-11-27"></a>2024-11-27</h1><h2 id="今天做了什么"><a href="#今天做了什么" class="headerlink" title="今天做了什么"></a>今天做了什么</h2><p>  白天六七点才睡觉，上午收到国家奖学金的修改通知，茫茫慌慌地跑去签字盖章，好麻烦，王老师又来找我弄贫困生的材料，什么是是个头，好累。直接找小王宝贝吃饭了，最近我有些颓废了，小王很优秀，比我有前途多了，我好像走到死胡同了，我也不知道该怎么办了。只是经常难受，我有点在乎别人的看法，我想要其他人理解我。晚上吃了回家吃饭，小王宝贝出的钱98，有些贵，哈哈。<br>  <img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/202411272306692.jpg"></p><h1 id="2024-11-28"><a href="#2024-11-28" class="headerlink" title="2024&#x2F;11&#x2F;28"></a>2024&#x2F;11&#x2F;28</h1><p>早上8：30起床了, 洗漱，喝药，背单词，上午准备把课程看一下，有时间把项目开始弄了，时间越来越少，其实距离春招也很近了。<br>10：52 背完单词了，用了好久，但是背多少，配置picgo插件，已经可以实现vscode进行书写blog了。越来越方便了，blog暂时不修改样式，开始做项目啦~<br>倒霉，晚上好难过，傻逼王老师有几把找我拉人头，牛马当的时间太久了，大家都觉得这种脏活得我来吗，好难受， 我也有说不的权力，我没有帮他弄，小王宝贝没能理解我，我知道这个不能怪她，我心理真的很希望身边人能理解我，我无法选择找父母和亲人倾诉，小王是我的唯一，害怕有一天会all alone，可能有人会觉得我只是患得患失，但是爱和不爱其实是可以明显感觉到的，一起去拿快递也是等，你自己去回去换衣服，我也是会等的。慢慢来吧。差点压不住怒火。<br><strong>视频测试</strong></p><iframe style="align:center" src="//player.bilibili.com/player.html?isOutside=true&aid=113373228307662&bvid=BV1bn14YVEei&cid=26472811684&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><hr><h1 id="2024-11-29"><a href="#2024-11-29" class="headerlink" title="2024&#x2F;11&#x2F;29"></a>2024&#x2F;11&#x2F;29</h1><p>上午背了单词，状态开始回升了，戒🦌，课程好想这几天全部弄掉啊，自己好菜，被群里人骂了，我有点发现我自己的问题了，我喜欢别人喂送的知识，自己很难主动学习，好像我一直都是这样。<br>我有一点找到我自己的价值了，我想去做自己做不到的事情，不是去追求遥不可及，是希望自己可以在自己能做的事情上有所突破，去静下心学习自己之前不会的知识，一点点吃透他。加油吧小羊。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="面试期间，不展示日记-QAQ"><a href="#面试期间，不展示日记-QAQ" class="headerlink" title="面试期间，不展示日记 QAQ"></a>面试期间，不展示日记 QAQ</h1><!-- # 2024-11-27## 今天做了什么  白天六七点才睡觉，上午收到国家奖学金的修改通知，茫茫慌慌地跑去签字盖章，好麻烦，王老师又来找我弄贫困生的材料，什么是是个头，好累。直接找小王宝贝吃饭了，最近我有些颓废了，小王很优秀，比我有前途多了，我好像走到死胡同了，我也不知道该怎么办了。只是经常难受，我有点在乎别人的看法，我想要其他人理解我。晚上吃了回家吃饭，小王宝贝出的钱98，有些贵，哈哈。  ![](https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/202411272306692.jpg)# 2024/11/28早上8：30起床了, 洗漱，喝药，背单词，上午准备把课程看一下，有时间把项目开始弄了，时间越来越少，其实距离春招也很近了。10：52 背完单词了，用了好久，但是背多少，配置picgo插件，已经可以实现vscode进行书写blog了。越来越方便了，blog暂时不修改样式，开始做项目啦~倒霉，晚上好难过，傻逼王老师有几把找我拉人头，牛马当的时间太久了，大家都觉得这种脏活得我来吗，好难受， 我也有说不的权力，我没有帮他弄，小王宝贝没能理解我，我知道这个不能怪她，我心理真的很希望身边人能理解我，我无法选择找父母和亲人倾诉，小王是我的唯一，害怕有一天会all alone，可能有人会觉得我只是患得患失，但是爱和不爱其实是可以明显感觉到的，一起去拿快递也是等，你自己去回去换衣服，我也是会等的。慢慢来吧。差点压不住怒火。**视频测试**<iframe style="align:center" src="//player.bilibili.com/player.html?isOutside=true&aid=113373228307662&bvid=BV1bn14YVEei&cid=26472811684&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><hr># 2024/11/29上午背了单词，状态开始回升了，戒🦌，课程好想这几天全部弄掉啊，自己好菜，被群里人骂了，我有点发现我自己的问题了，我喜欢别人喂送的知识，自己很难主动学习，好像我一直都是这样。我有一点找到我自己的价值了，我想去做自己做不到的事情，不是去追求遥不可及，是希望自己可以在自己能做的事情上有所突破，去静下心学习自己之前不会的知识，一点点吃透他。加油吧小羊。 -->]]></content>
       
       
       <categories>
@@ -226,61 +226,11 @@
     
     
     <entry>
-      <title>减肥日记</title>
-      <link href="/2024/11/27/%E5%87%8F%E8%82%A5%E6%97%A5%E8%AE%B0/"/>
-      <url>/2024/11/27/%E5%87%8F%E8%82%A5%E6%97%A5%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="减肥日记"><a href="#减肥日记" class="headerlink" title="减肥日记"></a>减肥日记</h1><p><strong>os：记录一些日常生活中的计划，每天的体重和照片</strong></p><h2 id="2024-12-1-定个目标，毕业前瘦到140斤"><a href="#2024-12-1-定个目标，毕业前瘦到140斤" class="headerlink" title="2024&#x2F;12&#x2F;1 定个目标，毕业前瘦到140斤"></a>2024&#x2F;12&#x2F;1 定个目标，毕业前瘦到140斤</h2><p>腹肌轮每天去使用，20个一组，4<del>5组<br>俯卧撑 10</del>15个一组，3<del>45组。<br>适当有氧，跑步2km起步，找一找跳绳，跳神的话20分钟左右。<br>卷腹，卷腹的话，10个一组，20</del>30组。（选择性，可替换）<br>一周1<del>2次拉单杠，5个一组，尝试2</del>4组。（选择性，可替换）<br>休息、放纵待定。</p><h2 id="时间：24-11-27"><a href="#时间：24-11-27" class="headerlink" title="时间：24&#x2F;11&#x2F;27"></a>时间：24&#x2F;11&#x2F;27</h2><p>有点没精神，趁着还有时间，先把今天小计划写一下吧，上午不知道能不能起来了，早上做一些俯卧撑，腹肌带一下，饮食要开始控制起来了。</p><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/202411272300145.jpg" alt="1ba3ff415343fd504ee5307505235cd"></p><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/202411272300620.jpg" alt="47c518219d1593d6dd77126b8376059"></p><h2 id="时间：24-11-28"><a href="#时间：24-11-28" class="headerlink" title="时间：24&#x2F;11&#x2F;28"></a>时间：24&#x2F;11&#x2F;28</h2><p>这天啥也没干，吃了不少，上午和对象一起吃的饭，两个人，一碗宜宾燃面，一碗牛肉拌面。一个鸡肉卷，一个淀粉肠。晚上我吃的小馄饨。<br><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/0b6ec618324b4b24a37e687f24fff27.jpg" alt="0b6ec618324b4b24a37e687f24fff27"><br><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/9eb4c2e92756399f9289c9a06f21ac9.jpg" alt="9eb4c2e92756399f9289c9a06f21ac9"><br>体重慢慢在增长，妈蛋的，真要完蛋了。</p><h2 id="时间：24-11-27-1"><a href="#时间：24-11-27-1" class="headerlink" title="时间：24&#x2F;11&#x2F;27"></a>时间：24&#x2F;11&#x2F;27</h2><p>反正也没钱，正常活着就行。<br>这天没运动</p><h2 id="时间：24-11-28-30"><a href="#时间：24-11-28-30" class="headerlink" title="时间：24&#x2F;11&#x2F;28 ~ 30"></a>时间：24&#x2F;11&#x2F;28 ~ 30</h2><p>两天没运动</p><h2 id="时间：24-12-1"><a href="#时间：24-12-1" class="headerlink" title="时间：24&#x2F;12&#x2F;1"></a>时间：24&#x2F;12&#x2F;1</h2><p>凌晨称重，今天想打篮球，两点左右睡觉。<br>上午加油。晚上来总结。<br><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/fb8bcc18787ab1a61074171b088d6ff.jpg" alt="fb8bcc18787ab1a61074171b088d6ff"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 日记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>测试</title>
       <link href="/2024/11/26/%E6%B5%8B%E8%AF%95/"/>
       <url>/2024/11/26/%E6%B5%8B%E8%AF%95/</url>
       
         <content type="html"><![CDATA[<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="1-测试"><a href="#1-测试" class="headerlink" title="1. 测试"></a>1. 测试</h3><ul><li>测试的目的是为了发现程序中的错误，而不是证明程序是正确的。</li></ul><h3 id="2-测试的分类"><a href="#2-测试的分类" class="headerlink" title="2. 测试的分类"></a>2. 测试的分类</h3><ul><li>单元测试：对最小的可测试单元进行检查和验证。</li><li>集成测试：对模块之间的接口进行检查和验证。</li><li>系统测试：对整个系统进行检查和验证。</li></ul><p>发现问题：图片无法显示</p><p><img src="https://gitee.com/ososluvwang/cloudimage/raw/master/img/202411270137976.png" alt="image-20241127013712931"><br>尝试本地图片显示<br><img src="/image.png" alt="alt text"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> demo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> demo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2024/11/26/hello-world/"/>
-      <url>/2024/11/26/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><p>第一次部署到github上，感觉挺有意思的。准备用这个记录我的生活吧，感觉自己好废物。</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
       <categories>
