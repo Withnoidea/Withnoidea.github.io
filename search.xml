@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>测试</title>
-      <link href="/2025/04/16/%E6%B5%8B%E8%AF%952/"/>
-      <url>/2025/04/16/%E6%B5%8B%E8%AF%952/</url>
-      
-        <content type="html"><![CDATA[<h2 id="测试">测试</h2><h3 id="1-测试">1. 测试</h3><ul><li>测试的目的是为了发现程序中的错误，而不是证明程序是正确的。</li></ul><h3 id="2-测试的分类">2. 测试的分类</h3><ul><li>单元测试：对最小的可测试单元进行检查和验证。</li><li>集成测试：对模块之间的接口进行检查和验证。</li><li>系统测试：对整个系统进行检查和验证。</li></ul><p>发现问题：图片无法显示</p><p><img src="https://gitee.com/ososluvwang/cloudimage/raw/master/img/202411270137976.png" alt="image-20241127013712931"><br>尝试本地图片显示<br><img src="image.png" alt="alt text"><br>出bug了</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> demo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> demo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>尤克里里学习</title>
       <link href="/2025/04/06/%E5%B0%A4%E5%85%8B%E9%87%8C%E9%87%8C%E5%AD%A6%E4%B9%A0/"/>
       <url>/2025/04/06/%E5%B0%A4%E5%85%8B%E9%87%8C%E9%87%8C%E5%AD%A6%E4%B9%A0/</url>
