@@ -8,7 +8,7 @@
       <link href="/2025/06/29/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BF%86/"/>
       <url>/2025/06/29/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BF%86/</url>
       
-        <content type="html"><![CDATA[<h1>考研数学重点知识记忆</h1><h2 id="第二章-数列极限">第二章  数列极限</h2><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250629131322227.png" alt="image-20250629131322227"><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250629131337142.png" alt="image-20250629131337142"></p>]]></content>
+        <content type="html"><![CDATA[<h1>考研数学重点知识记忆</h1><h2 id="第二章-数列极限">第二章  数列极限</h2><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250629131322227.png" alt="image-20250629131322227"><br><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250629131337142.png" alt="image-20250629131337142"><br><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20250629133157.png" alt="20250629133157"><br><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20250629133124.png" alt="20250629133124"></p>]]></content>
       
       
       <categories>
@@ -25,6 +25,19 @@
             <tag> 数学 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2025/06/29/test/"/>
+      <url>/2025/06/29/test/</url>
+      
+        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Document</title></head><body>  你好</body></html>]]></content>
+      
+      
       
     </entry>
     
@@ -216,31 +229,6 @@
         <tags>
             
             <tag> 日记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试</title>
-      <link href="/2024/11/26/%E6%B5%8B%E8%AF%95/"/>
-      <url>/2024/11/26/%E6%B5%8B%E8%AF%95/</url>
-      
-        <content type="html"><![CDATA[<h2 id="测试">测试</h2><h3 id="1-测试">1. 测试</h3><ul><li>测试的目的是为了发现程序中的错误，而不是证明程序是正确的。</li></ul><h3 id="2-测试的分类">2. 测试的分类</h3><ul><li>单元测试：对最小的可测试单元进行检查和验证。</li><li>集成测试：对模块之间的接口进行检查和验证。</li><li>系统测试：对整个系统进行检查和验证。</li></ul><p>发现问题：图片无法显示</p><p><img src="https://gitee.com/ososluvwang/cloudimage/raw/master/img/202411270137976.png" alt="image-20241127013712931"><br>尝试本地图片显示<br><img src="image.png" alt="alt text"><br><code>出bug了</code></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> demo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> demo </tag>
             
         </tags>
       
