@@ -4,9 +4,36 @@
   
     
     <entry>
+      <title>实用的机器学习课程</title>
+      <link href="/2025/07/27/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2025/07/27/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="实用的机器学习课程">实用的机器学习课程</h1><p>[toc]</p><h2 id="监督学习">监督学习</h2><ol type="1"><li>分类</li><li>回归</li></ol><h3 id="basic-concepts-of-supervised-learning">Basic Concepts ofSupervised Learning</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190511710.png" alt="image-20250707190511710"></p><p>Sample，example, instance</p><p>Features, representations, predictiors</p><h3 id="when-should-we-use-ml">When should we use ML</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190648999.png" alt="image-20250707190648999"></p><h3 id="what-is-a-typical-pipline-of-ml">What is a typical pipline ofML</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190930188.png" alt="image-20250707190930188"></p><p>Define A ML problem -&gt; Construct Dataset -&gt; Transform data&amp;get features -&gt; Design &amp; train a model -&gt; Use the modelto predict</p><h3 id="a-toy-example">A toy example</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191108817.png" alt="image-20250707191108817"></p><ol type="1"><li><p>Define a ML problem</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191324220.png" alt="image-20250707191324220"></p></li><li><p>Construct dataset</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191356982.png" alt="image-20250707191356982"></p></li><li><p>Transform data</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191442605.png" alt="image-20250707191442605"></p></li><li><p>Design % train a model(Training)</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191541630.png" alt="image-20250707191541630"></p></li><li><p>Use the model to predict</p><p><img src="C:/Users/24824/AppData/Roaming/Typora/typora-user-images/image-20250707191621381.png" alt="image-20250707191621381"></p></li></ol><h3 id="改进">改进</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191920177.png" alt="image-20250707191920177"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192152931.png" alt="image-20250707192152931"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192207430.png" alt="image-20250707192207430"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192238433.png" alt="image-20250707192238433"></p><h3 id="generalization-泛化">Generalization 泛化</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192414003.png" alt="image-20250707192414003"></p><h3 id="泛化测试集上的表现">泛化：测试集上的表现</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192538277.png" alt="image-20250707192538277"></p><h3 id="bias">bias:</h3><h3 id="variance">Variance:</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192620796.png" alt="image-20250707192620796"></p><h3 id="define-a-ml-problem">Define a ML problem</h3><h2 id="无监督学习">无监督学习</h2><ol type="1"><li>聚类</li><li>降维</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>考研数学重点知识记忆</title>
-      <link href="/2025/06/29/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BF%86/"/>
-      <url>/2025/06/29/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BF%86/</url>
+      <link href="/2025/07/06/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BF%86/"/>
+      <url>/2025/07/06/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BF%86/</url>
       
         <content type="html"><![CDATA[<h1 id="考研数学重点知识记忆">考研数学重点知识记忆</h1><h2 id="第二章-数列极限">第二章 数列极限</h2><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250629131322227.png" alt="image-20250629131322227"> <img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250629131337142.png" alt="image-20250629131337142"> <img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20250629133157.png" alt="20250629133157"> <img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20250629133124.png" alt="20250629133124"> <img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20250629140233.png" alt="20250629140233"> <img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20250629140826.png" alt="20250629140826"> <img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20250629140922.png" alt="20250629140922"> <img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20250629142041.png" alt="20250629142041"></p>]]></content>
       
