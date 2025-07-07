@@ -4,33 +4,6 @@
   
     
     <entry>
-      <title>实用的机器学习课程</title>
-      <link href="/2025/07/27/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2025/07/27/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="实用的机器学习课程">实用的机器学习课程</h1><p>[toc]</p><h2 id="监督学习">监督学习</h2><ol type="1"><li>分类</li><li>回归</li></ol><h3 id="basic-concepts-of-supervised-learning">Basic Concepts ofSupervised Learning</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190511710.png" alt="image-20250707190511710"></p><p>Sample，example, instance</p><p>Features, representations, predictiors</p><h3 id="when-should-we-use-ml">When should we use ML</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190648999.png" alt="image-20250707190648999"></p><h3 id="what-is-a-typical-pipline-of-ml">What is a typical pipline ofML</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190930188.png" alt="image-20250707190930188"></p><p>Define A ML problem -&gt; Construct Dataset -&gt; Transform data&amp;get features -&gt; Design &amp; train a model -&gt; Use the modelto predict</p><h3 id="a-toy-example">A toy example</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191108817.png" alt="image-20250707191108817"></p><ol type="1"><li><p>Define a ML problem</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191324220.png" alt="image-20250707191324220"></p></li><li><p>Construct dataset</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191356982.png" alt="image-20250707191356982"></p></li><li><p>Transform data</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191442605.png" alt="image-20250707191442605"></p></li><li><p>Design % train a model(Training)</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191541630.png" alt="image-20250707191541630"></p></li><li><p>Use the model to predict</p><p><img src="C:/Users/24824/AppData/Roaming/Typora/typora-user-images/image-20250707191621381.png" alt="image-20250707191621381"></p></li></ol><h3 id="改进">改进</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191920177.png" alt="image-20250707191920177"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192152931.png" alt="image-20250707192152931"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192207430.png" alt="image-20250707192207430"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192238433.png" alt="image-20250707192238433"></p><h3 id="generalization-泛化">Generalization 泛化</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192414003.png" alt="image-20250707192414003"></p><h3 id="泛化测试集上的表现">泛化：测试集上的表现</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192538277.png" alt="image-20250707192538277"></p><h3 id="bias">bias:</h3><h3 id="variance">Variance:</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192620796.png" alt="image-20250707192620796"></p><h3 id="define-a-ml-problem">Define a ML problem</h3><h2 id="无监督学习">无监督学习</h2><ol type="1"><li>聚类</li><li>降维</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 机器学习 </category>
-          
-          <category> 人工智能 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 机器学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>408重难点以及错题整理</title>
       <link href="/2025/07/07/408%E9%87%8D%E9%9A%BE%E7%82%B9%E4%BB%A5%E5%8F%8A%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/"/>
       <url>/2025/07/07/408%E9%87%8D%E9%9A%BE%E7%82%B9%E4%BB%A5%E5%8F%8A%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/</url>
@@ -50,6 +23,33 @@
             <tag> 考研 </tag>
             
             <tag> 408 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>实用的机器学习课程</title>
+      <link href="/2025/07/07/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2025/07/07/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="实用的机器学习课程">实用的机器学习课程</h1><p>[toc]</p><h2 id="监督学习">监督学习</h2><ol type="1"><li>分类</li><li>回归</li></ol><h3 id="basic-concepts-of-supervised-learning">Basic Concepts ofSupervised Learning</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190511710.png" alt="image-20250707190511710"></p><p>Sample，example, instance</p><p>Features, representations, predictiors</p><h3 id="when-should-we-use-ml">When should we use ML</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190648999.png" alt="image-20250707190648999"></p><h3 id="what-is-a-typical-pipline-of-ml">What is a typical pipline ofML</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190930188.png" alt="image-20250707190930188"></p><p>Define A ML problem -&gt; Construct Dataset -&gt; Transform data&amp;get features -&gt; Design &amp; train a model -&gt; Use the modelto predict</p><h3 id="a-toy-example">A toy example</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191108817.png" alt="image-20250707191108817"></p><ol type="1"><li><p>Define a ML problem</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191324220.png" alt="image-20250707191324220"></p></li><li><p>Construct dataset</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191356982.png" alt="image-20250707191356982"></p></li><li><p>Transform data</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191442605.png" alt="image-20250707191442605"></p></li><li><p>Design % train a model(Training)</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191541630.png" alt="image-20250707191541630"></p></li><li><p>Use the model to predict</p><p><img src="C:/Users/24824/AppData/Roaming/Typora/typora-user-images/image-20250707191621381.png" alt="image-20250707191621381"></p></li></ol><h3 id="改进">改进</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191920177.png" alt="image-20250707191920177"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192152931.png" alt="image-20250707192152931"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192207430.png" alt="image-20250707192207430"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192238433.png" alt="image-20250707192238433"></p><h3 id="generalization-泛化">Generalization 泛化</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192414003.png" alt="image-20250707192414003"></p><h3 id="泛化测试集上的表现">泛化：测试集上的表现</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192538277.png" alt="image-20250707192538277"></p><h3 id="bias">bias:</h3><h3 id="variance">Variance:</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192620796.png" alt="image-20250707192620796"></p><h3 id="define-a-ml-problem">Define a ML problem</h3><h2 id="无监督学习">无监督学习</h2><ol type="1"><li>聚类</li><li>降维</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
             
         </tags>
       
