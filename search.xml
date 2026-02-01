@@ -51,33 +51,6 @@
     
     
     <entry>
-      <title>实用的机器学习课程</title>
-      <link href="/2025/07/07/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2025/07/07/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="实用的机器学习课程">实用的机器学习课程</h1><p>[toc]</p><h2 id="监督学习">监督学习</h2><ol type="1"><li>分类</li><li>回归</li></ol><h3 id="basic-concepts-of-supervised-learning">Basic Concepts of Supervised Learning</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190511710.png" alt="image-20250707190511710"></p><p>Sample，example, instance</p><p>Features, representations, predictiors</p><h3 id="when-should-we-use-ml">When should we use ML</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190648999.png" alt="image-20250707190648999"></p><h3 id="what-is-a-typical-pipline-of-ml">What is a typical pipline of ML</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707190930188.png" alt="image-20250707190930188"></p><p>Define A ML problem -&gt; Construct Dataset -&gt; Transform data &amp;get features -&gt; Design &amp; train a model -&gt; Use the model to predict</p><h3 id="a-toy-example">A toy example</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191108817.png" alt="image-20250707191108817"></p><ol type="1"><li><p>Define a ML problem</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191324220.png" alt="image-20250707191324220"></p></li><li><p>Construct dataset</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191356982.png" alt="image-20250707191356982"></p></li><li><p>Transform data</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191442605.png" alt="image-20250707191442605"></p></li><li><p>Design % train a model(Training)</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191541630.png" alt="image-20250707191541630"></p></li><li><p>Use the model to predict</p><p><img src="C:/Users/24824/AppData/Roaming/Typora/typora-user-images/image-20250707191621381.png" alt="image-20250707191621381"></p></li></ol><h3 id="改进">改进</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707191920177.png" alt="image-20250707191920177"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192152931.png" alt="image-20250707192152931"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192207430.png" alt="image-20250707192207430"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192238433.png" alt="image-20250707192238433"></p><h3 id="generalization-泛化">Generalization 泛化</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192414003.png" alt="image-20250707192414003"></p><h3 id="泛化测试集上的表现">泛化：测试集上的表现</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192538277.png" alt="image-20250707192538277"></p><h3 id="bias">bias:</h3><h3 id="variance">Variance:</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250707192620796.png" alt="image-20250707192620796"></p><h3 id="define-a-ml-problem">Define a ML problem</h3><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708165901745.png" alt="image-20250708165901745"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708170304933.png" alt="image-20250708170304933"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708170340574.png" alt="image-20250708170340574"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708170607135.png" alt="image-20250708170607135"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708170643078.png" alt="image-20250708170643078"></p><p>useful features</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708171051852.png" alt="image-20250708171051852"></p><p>User features</p><p>Video features</p><p>Context</p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708171418477.png" alt="image-20250708171418477"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708171709844.png" alt="image-20250708171709844"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708172009713.png" alt="image-20250708172009713"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708172145016.png" alt="image-20250708172145016"></p><p><img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20250708172230208.png" alt="image-20250708172230208"></p><h2 id="无监督学习">无监督学习</h2><ol type="1"><li>聚类</li><li>降维</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 机器学习 </category>
-          
-          <category> 人工智能 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 机器学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>星轨教程</title>
       <link href="/2024/12/01/%E6%98%9F%E8%BD%A8%E6%95%99%E7%A8%8B/"/>
       <url>/2024/12/01/%E6%98%9F%E8%BD%A8%E6%95%99%E7%A8%8B/</url>
@@ -97,33 +70,6 @@
         <tags>
             
             <tag> 摄影 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>摄影日记</title>
-      <link href="/2024/11/28/%E6%91%84%E5%BD%B1%E5%B1%95/"/>
-      <url>/2024/11/28/%E6%91%84%E5%BD%B1%E5%B1%95/</url>
-      
-        <content type="html"><![CDATA[<p>计划在这篇日记里记录一些日常摄影。</p><h3 id="瞳孔写真">瞳孔写真</h3><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/瞳孔-8.jpg" alt="瞳孔-8"> <img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/瞳孔-4.jpg" alt="瞳孔-4"></p><h1 id="星空摄影">星空摄影</h1><p><strong>前期准备:</strong></p><p>三脚架，相机，电池或者外接充电宝，内存卡，快门线(相机自带延时功能)</p><p><strong>拍摄准备:</strong> 1.找一颗比较明亮的星星然后手动放大对焦(可以使用峰值) 2.锁定白平衡4200k-4600k左右 3.设定拍摄间隔时间30秒左右拍一张(500法则500除以焦段)iso2000-3200 后期制作延时帧数为24，比如说想要拍摄10秒钟的延时视频就需要240张的 照片 然后就可以按下快门进行拍摄了。</p><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1155163094&bvid=BV1hZ421W7PR&cid=1565766372&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><h1 id="希区柯克">希区柯克</h1><h2 id="拉近">拉近</h2><p>视频结尾处定格，并将定格图片切入画中画，移动至视频开头，找到不透明度，数值降低。</p><p>主轨结尾处打一个关键帧，视频开头处双手放大视频，并且调整任务重合，删除画中画。</p><h2 id="拉远">拉远</h2><p>视频开始处定格，并将定格图片切入画中画，移动至视频结尾，找到不透明度，数值降低。</p><p>主轨开始处打一个关键帧，视频结尾处双手放大视频，并且调整任务重回，删除画中画。</p><h2 id="2025年1月13-月亮">2025年1月13 月亮</h2><p><img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/DSC06792-2.jpg" alt="DSC06792-2"> <img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/DSC06792-已增强-降噪-1.jpg" alt="DSC06792-已增强-降噪-1"> <img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/DSC06793-3.jpg" alt="DSC06793-3"> <img src="https://raw.gitmirror.com/Withnoidea/PicGoDemo/blog/img/DSC06794-4.jpg" alt="DSC06794-4"></p><h3 id="测试">测试</h3><div class="gallery-container" data-type="data" data-button="">      <div class="gallery-items">[{"url":"https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg","alt":""},{"url":"https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg","alt":""},{"url":"https://i.loli.net/2019/12/25/gEy5Zc1Ai6VuO4N.jpg","alt":""},{"url":"https://i.loli.net/2019/12/25/d6QHbytlSYO4FBG.jpg","alt":""},{"url":"https://i.loli.net/2019/12/25/6nepIJ1xTgufatZ.jpg","alt":""},{"url":"https://i.loli.net/2019/12/25/E7Jvr4eIPwUNmzq.jpg","alt":""},{"url":"https://i.loli.net/2019/12/25/mh19anwBSWIkGlH.jpg","alt":""},{"url":"https://i.loli.net/2019/12/25/2tu9JC8ewpBFagv.jpg","alt":""}]</div>    </div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日记 </category>
-          
-          <category> 摄影 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 日记 </tag>
             
         </tags>
       
