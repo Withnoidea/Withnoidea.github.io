@@ -108,16 +108,16 @@ export default defineUserConfig({
       // jsfiddle: true,     // 启用嵌入 jsfiddle 语法 @[jsfiddle](user/id)
       // npmTo: true,        // 启用 npm-to 容器  ::: npm-to
       // demo: true,         // 启用 demo 容器  ::: demo
-      // collapse: true,     // 启用折叠容器  ::: collapse
+      collapse: true,     // 启用折叠容器  ::: collapse
       // repl: {             // 启用 代码演示容器
       //   go: true,         // ::: go-repl
       //   rust: true,       // ::: rust-repl
       //   kotlin: true,     // ::: kotlin-repl
       //   python: true,     // ::: python-repl
       // },
-      // math: {             // 启用数学公式
-      //   type: 'katex',
-      // },
+      math: {             // 启用数学公式
+        type: 'katex',
+      },
       // chartjs: true,      // 启用 chart.js
       // echarts: true,      // 启用 ECharts
       // mermaid: true,      // 启用 mermaid
@@ -129,7 +129,7 @@ export default defineUserConfig({
       //   size: true,       // 启用图片大小
       // },
       // include: true,      // 在 Markdown 文件中导入其他 markdown 文件内容
-      // imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
+      imageSize: true, // 启用 自动填充 图片宽高属性，避免页面抖动可选 'local' | 'all'
     },
 
     /**
