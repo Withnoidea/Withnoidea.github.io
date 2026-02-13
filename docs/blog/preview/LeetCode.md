@@ -8,39 +8,45 @@ createTime: 2026/02/13 13:41:02
 permalink: /blog/pnmc9sjt/
 ---
 
+## LeetCode Hot 100
+
+## LeetCode Hot 100
+
 # LeetCode Hot 100
 
 [240. 搜索二维矩阵 II - 力扣（LeetCode）](https://leetcode.cn/problems/search-a-2d-matrix-ii/description/?envType=study-plan-v2&envId=top-100-liked)
 
 ::: collapse
-编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
 
-每行的元素从左到右升序排列。
-每列的元素从上到下升序排列。
+- 搜索二维矩阵 II
+  编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
 
-示例 1：
+  每行的元素从左到右升序排列。
+  每列的元素从上到下升序排列。
 
-![img](https://cdn.jsdelivr.net/gh/Withnoidea/images/searchgrid2.jpg)
+  示例 1：
 
-输入：matrix = \[[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
-输出：true
-示例 2：
+  ![img](https://cdn.jsdelivr.net/gh/Withnoidea/images/searchgrid2.jpg)
 
-![img](https://cdn.jsdelivr.net/gh/Withnoidea/images/searchgrid.jpg)
+  输入：matrix = \[[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
+  输出：true
+  示例 2：
 
-输入：matrix = \[[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
-输出：false
+  ![img](https://cdn.jsdelivr.net/gh/Withnoidea/images/searchgrid.jpg)
 
-提示：
+  输入：matrix = \[[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
+  输出：false
 
-m == matrix.length
-n == matrix[i].length
-1 <= n, m <= 300
--109 <= matrix[i][j] <= 109
-每行的所有元素从左到右升序排列
-每列的所有元素从上到下升序排列
--10^9 <= target <= 10^9
-:::
+  提示：
+
+  m == matrix.length
+  n == matrix[i].length
+  1 <= n, m <= 300
+  -109 <= matrix[i][j] <= 109
+  每行的所有元素从左到右升序排列
+  每列的所有元素从上到下升序排列
+  -10^9 <= target <= 10^9
+  :::
 
 思路1：观察到m、n均小于等于300，可以直接双重循环进行枚举。
 时间复杂度 $O(mn)$
@@ -125,20 +131,3 @@ public:
     }
 };
 ```
-
-## Test1
-
-## Test2
-
-# TestTOC
-
-::: collapse
-
-- 标题 1
-
-  正文内容
-
-- 标题 2
-
-  正文内容
-  :::
