@@ -8,17 +8,14 @@ createTime: 2026/02/13 13:41:02
 permalink: /blog/pnmc9sjt/
 ---
 
-## LeetCode Hot 100
-
-## LeetCode Hot 100
-
 # LeetCode Hot 100
 
 [240. 搜索二维矩阵 II - 力扣（LeetCode）](https://leetcode.cn/problems/search-a-2d-matrix-ii/description/?envType=study-plan-v2&envId=top-100-liked)
 
 ::: collapse
 
-- 搜索二维矩阵 II
+- 搜索二维矩阵 II 点击展开题目
+
   编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
 
   每行的元素从左到右升序排列。
