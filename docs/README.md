@@ -4,8 +4,8 @@ externalLinkIcon: false
 config:
   - type: hero
     full: true
-    # forceDark: true
-    # effect: lightning
+    forceDark: true
+    effect: lightning
     hero:
       name: Withnoidea
       tagline: VuePress Next Theme
