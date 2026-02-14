@@ -23,5 +23,9 @@
   },
   "engines": {
     "node": "^20.19.0 || >=22.0.0"
+  },
+  "dependencies": {
+    "echarts": "^6.0.0",
+    "swiper": "^12.1.1"
   }
 }
