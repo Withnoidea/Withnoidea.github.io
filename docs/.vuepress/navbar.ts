@@ -15,4 +15,13 @@ export default defineNavbarConfig([
     text: '笔记',
     items: [{ text: '示例', link: '/demo/README.md' }]
   },
+  {
+    text:'计算机语言',
+    items:[
+      {text:'C语言',link:'/languages/C/README.md'},
+      {text:'C++',link:'/languages/C++/README.md'},
+      {text:'Python',link:'/languages/Python/README.md'},
+      {text:'Java',link:'/languages/Java/README.md'},
+    ]
+  },
 ])
