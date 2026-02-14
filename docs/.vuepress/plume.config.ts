@@ -24,6 +24,7 @@ export default defineThemeConfig({
 
   social: [
     { icon: 'github', link: '/' },
+    { icon: 'bilibili', link: 'https://space.bilibili.com/504772661' },
   ],
   // navbarSocialInclude: ['github'], // 允许显示在导航栏的 social 社交链接
   // aside: true, // 页内侧边栏， 默认显示在右侧
@@ -40,10 +41,10 @@ export default defineThemeConfig({
   // createTime: true, // 是否显示文章创建时间
 
   /* 站点页脚 */
-  // footer: {
-  //   message: 'Power by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a>',
-  //   copyright: '',
-  // },
+  footer: {
+    message: '',
+    copyright: '',
+  },
 
   /**
    * @see https://theme-plume.vuejs.press/config/theme/#profile
