@@ -18,7 +18,7 @@ import collections from './collections'
  * @see https://theme-plume.vuejs.press/config/theme/
  */
 export default defineThemeConfig({
-  logo: 'https://theme-plume.vuejs.press/plume.png',
+  logo: 'https://cdn.jsdelivr.net/gh/Withnoidea/images/avata.jpg',
 
   appearance: true,  // 配置 深色模式
 
@@ -50,9 +50,9 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/theme/#profile
    */
   profile: {
-    avatar: 'https://theme-plume.vuejs.press/plume.png',
+    avatar: 'https://cdn.jsdelivr.net/gh/Withnoidea/images/avata.jpg',
     name: 'Withnoidea',
-    description: 'Never give up',
+    description: 'A man trying to be better.',
     // circle: true,
     // location: '',
     // organization: '',

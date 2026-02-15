@@ -17,11 +17,11 @@ export default defineUserConfig({
   base: '/',
   lang: 'zh-CN',
   title: 'Withnoidea',
-  description: 'Never give up',
+  description: 'A man trying to be better.',
 
   head: [
     // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/jpg', href: 'https://cdn.jsdelivr.net/gh/Withnoidea/images/avata.jpg' }],
   ],
 
   bundler: viteBundler(),
