@@ -21,7 +21,7 @@ export default defineUserConfig({
 
   head: [
     // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/jpg', href: 'https://cdn.jsdelivr.net/gh/Withnoidea/images/avata.jpg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: 'https://cdn.jsdelivr.net/gh/Withnoidea/images/avata.png' }],
   ],
 
   bundler: viteBundler(),
