@@ -8,10 +8,12 @@
       <a href="https://gitee.com/zhenghaoyang24" target="_blank" class="head-social-btn">
         <icon name="simple-icons:gitee" />
       </a> -->
-
-      <!-- <router-link to="/blog/" class="head-social-avatar"
-        ><img src="https://oss.ajohn.top/blog/friends/ajohn.webp" alt="avatar"
-      /></router-link> -->
+      <router-link to="/blog/" class="head-social-avatar">
+        <img
+          src="https://cdn.acwing.com/media/user/profile/photo/228437_lg_416facca95.jpg"
+          alt="avatar"
+        />
+      </router-link>
 
       <!-- <a href="https://codepen.io/zhenghaoyang24" target="_blank" class="head-social-btn">
         <icon class="head-social-btn" name="simple-icons:codepen"></icon>
@@ -27,9 +29,9 @@
           <template #motto>
             <slot name="motto">
               <p class="about-me-card-title-normal">座右铭</p>
-              <p class="about-me-card-text-big">凡事预则立，</p>
+              <p class="about-me-card-text-big">我走得慢，</p>
               <p class="about-me-card-text-big about-me-card-text-color">
-                不预则废。
+                但绝不后退
               </p>
             </slot>
           </template>

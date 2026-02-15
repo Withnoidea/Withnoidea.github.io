@@ -13,7 +13,10 @@ export default defineNavbarConfig([
   { text: '归档', link: '/blog/archives/' },
   {
     text: '笔记',
-    items: [{ text: '示例', link: '/demo/README.md' }]
+    items: [
+      { text: '示例', link: '/demo/README.md' },
+      {text:'missing-semester',link:'/note/missing-semester/README.md'},
+  ]
   },
   {
     text:'计算机语言',
@@ -23,5 +26,5 @@ export default defineNavbarConfig([
       {text:'Python',link:'/languages/Python/README.md'},
       {text:'Java',link:'/languages/Java/README.md'},
     ]
-  },
+  }
 ])

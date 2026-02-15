@@ -4,7 +4,7 @@
   <div class="about-me-name">
     <p>你好，很高兴认识你！👋</p>
     <p class="about-me-card-text-big">I'm Withnoidea .</p>
-    <p>Live a life you will remember.</p>
+    <p>A man trying to be better.</p>
   </div>
 </template>
 
