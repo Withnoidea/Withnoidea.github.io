@@ -48,7 +48,8 @@ Hello
 - cd - 回到**「上一次所在的目录」**
 - cd ~ 回到**「当前用户的家目录」**，直接输入cd等价于cd ~
 - cd / 回到**「根目录」**
-<hr>
+  <hr>
+
   **直接输 echo hello和 ../../bin/echo hello 的区别**
 
 - echo hello：Shell 会去系统预设的「命令搜索路径」（环境变量 PATH）里找 echo，找到 /bin/echo 后执行
