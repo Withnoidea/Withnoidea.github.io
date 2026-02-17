@@ -164,7 +164,12 @@ export default defineUserConfig({
      * 加密功能
      * @see https://theme-plume.vuejs.press/guide/features/encryption/
      */
-    // encrypt: {},
+    encrypt: {
+          rules: {
+            // 可以是 文件夹的路径，对该目录下所有文章加密
+            '/diary/': '26217',
+          }
+        }
 
     /**
      * 启用 llmstxt 插件，用于为大语言模型提供更友好的内容

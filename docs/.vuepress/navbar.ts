@@ -18,6 +18,12 @@ export default defineNavbarConfig([
       {text:'missing-semester',link:'/note/missing-semester/README.md'},
   ]
   },
+    {
+    text: '日记',
+    items: [
+      { text: '日记', link: '/diary/README.md' },
+  ]
+  },
   {
     text:'计算机语言',
     items:[
