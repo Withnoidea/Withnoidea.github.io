@@ -208,3 +208,103 @@ public:
     }
 };
 ```
+
+## 动态规划
+
+### 完全平方数
+
+::: collapse
+
+- 完全平方数
+
+  给你一个整数 n ，返回 和为 n 的完全平方数的最少数量 。
+  完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。
+
+  示例 1：
+  输入：n = 12
+  输出：3
+  解释：12 = 4 + 4 + 4
+
+  示例 2：
+  输入：n = 13
+  输出：2
+  解释：13 = 4 + 9
+
+  提示：
+  1 <= n <= 10^4
+  :::
+
+::: code-tabs
+
+@tab C++神秘数学定理
+
+```C++
+class Solution {
+public:
+    bool check(int n)
+    {
+        int r = sqrt(n);
+        return r * r == n;
+    }
+
+    int numSquares(int n) {
+        if(check(n)) return 1;
+
+        for(int a = 1; a <= n / a; a ++)
+            if(check(n - a * a))
+                return 2;
+
+        while(n % 4 == 0) n /= 4;
+        if(n % 8 != 7) return 3;
+
+        return 4;
+    }
+};
+```
+
+@tab C++完全背包思想
+
+```C++
+class Solution {
+public:
+    int numSquares(int n) {
+        vector<int> f(n + 1, n);
+        f[0] = 0;
+        for(int i = 1; i <= n; i ++)
+        {
+            for(int j = 1; j <= i / j; j ++)
+            {
+                f[i] = min(f[i], f[i - j * j] + 1);
+            }
+        }
+        return f[n];
+    }
+};
+```
+
+:::
+
+### 零钱兑换
+
+::: code-tabs
+@tab C++
+
+```C++
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        int INF = INT_MAX;
+        vector<int> f(amount + 1, INF);
+        f[0] = 0;
+
+        for(int i = 1; i <= amount; i ++)
+            for(int j = 0; j < coins.size(); j ++)
+                if(coins[j] <= i && f[i - coins[j]] != INF)
+                    f[i] = min(f[i], f[i - coins[j]] + 1);
+
+        return f[amount] == INF ? -1 : f[amount];
+    }
+};
+```
+
+:::
