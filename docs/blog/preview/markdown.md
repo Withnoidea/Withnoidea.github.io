@@ -4,7 +4,7 @@ tags:
   - markdown
 createTime: 2026/02/13 12:40:47
 permalink: /blog/6xsbf2t9/
-cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260224173629.png
+# cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260224173629.png
 ---
 
 ## 标题H2

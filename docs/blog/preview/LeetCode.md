@@ -6,7 +6,7 @@ tags:
   - 数据结构
 createTime: 2026/02/13 13:41:02
 permalink: /blog/pnmc9sjt/
-cover: https://raw.githubusercontent.com/Withnoidea/images/main/leetcode.png
+# cover: https://raw.githubusercontent.com/Withnoidea/images/main/leetcode.png
 ---
 
 ## 每日一题
