@@ -54,8 +54,8 @@ export default defineThemeConfig({
     name: 'Withnoidea',
     description: 'A man trying to be better.',
     circle: true,
-    // location: '',
-    // organization: '',
+    // location: 'Jiangsu',
+    // organization: 'Stay at home',
   },
 
   navbar,
