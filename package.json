@@ -13,6 +13,7 @@
     "vp-update": "npx vp-update"
   },
   "devDependencies": {
+    "@cloudbase/framework-plugin-website": "^1.9.7",
     "@vuepress/bundler-vite": "2.0.0-rc.26",
     "@vuepress/shiki-twoslash": "2.0.0-rc.121",
     "http-server": "^14.1.1",
