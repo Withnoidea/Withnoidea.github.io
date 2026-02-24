@@ -91,6 +91,73 @@ public:
 
 :::
 
+### [从根到叶的二进制数之和](https://leetcode.cn/problems/sum-of-root-to-leaf-binary-numbers/description/?envType=daily-question&envId=2026-02-24)
+
+::: collapse
+
+- 点击展开题目
+
+  给出一棵二叉树，其上每个结点的值都是 0 或 1 。每一条从根到叶的路径都代表一个从最高有效位开始的二进制数。
+
+          例如，如果路径为 0 -> 1 -> 1 -> 0 -> 1，那么它表示二进制数 01101，也就是 13 。
+          对树上的每一片叶子，我们都要找出从根到该叶子的路径所表示的数字。
+
+          返回这些数字之和。题目数据保证答案是一个 32 位 整数。
+
+
+
+          示例 1：
+
+  ![20260224132915](https://raw.githubusercontent.com/Withnoidea/images/main/20260224132915.png)
+  输入：root = [1,0,1,0,1,0,1]
+  输出：22
+  解释：(100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
+  示例 2：
+
+          输入：root = [0]
+          输出：0
+
+  :::
+  思路
+  遍历，维护从根节点到当前节点的二进制和
+  深度优先遍历dfs，当前结点到根的二进制值就是父结点乘以2加上当前结点的值。如果遍历到叶子结点，那么就更新答案
+  ![20260224133221](https://raw.githubusercontent.com/Withnoidea/images/main/20260224133221.png)
+
+- 时间复杂度: $O(N)$
+- 空间复杂度: $O(H)$
+  ::: code-tabs
+  @tab C++
+
+  ```C++
+    /**
+    * Definition for a binary tree node.
+    * struct TreeNode {
+    *     int val;
+    *     TreeNode *left;
+    *     TreeNode *right;
+    *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    * };
+    */
+    class Solution {
+    public:
+        int sumRootToLeaf(TreeNode* root) {
+            return dfs(root, 0);
+        }
+
+        int dfs(TreeNode* root, int x)
+        {
+            if(!root) return 0;
+            x = x * 2 + root->val;
+            if(!root->left && !root->right) return x;
+            return dfs(root->left, x) + dfs(root->right, x);
+        }
+    };
+  ```
+
+  :::
+
 ## LeetCode Hot 100
 
 ### [240. 搜索二维矩阵 II - 力扣（LeetCode）](https://leetcode.cn/problems/search-a-2d-matrix-ii/description/?envType=study-plan-v2&envId=top-100-liked)
