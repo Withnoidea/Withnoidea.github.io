@@ -161,4 +161,6 @@ qwen3:1.7b                          8f68893c685c    1.4 GB    5 weeks ago
 <p align="center"> <img src="https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260226132212414.png" alt="image-20260226132212414" style="zoom:33%;" /> </p>
 
 > 现在**不管手机用流量还是别的 WiFi**，都能连家里的 Ollama 了。
-> qqqqqqqqqqqq
+
+qqqqqqqqqqqq
+的v撒啊啊啊啊啊啊啊啊啊啊啊
