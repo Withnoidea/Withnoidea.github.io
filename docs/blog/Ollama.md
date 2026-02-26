@@ -63,7 +63,6 @@ qwen3:1.7b                          8f68893c685c    1.4 GB    5 weeks ago
 1. 浏览器打开 `192.168.86.1`（你的网关）登录路由器
 
 2. 找到 **DHCP 服务器** → **静态地址分配 / 地址绑定**（不推荐）
-
    - 添加一条：
      1. **MAC 地址**：你电脑 WLAN 的 MAC（可在 `ipconfig /all` 里找）
      2. **IP 地址**：`192.168.86.100`
@@ -83,7 +82,7 @@ qwen3:1.7b                          8f68893c685c    1.4 GB    5 weeks ago
 
 访问 Ollama 就用这个地址
 
-把地址写成：http://DESKTOP-ABC123.local:11434
+把地址写成：`http://DESKTOP-ABC123.local:11434`
 
 **永远不变，IP 变了也能用！同个 WiFi 下，手机、平板都可以用**
 
@@ -122,14 +121,14 @@ qwen3:1.7b                          8f68893c685c    1.4 GB    5 weeks ago
 
 2. 以**管理员身份**打开 cmd 或 PowerShell
 
-3. 执行（把 
+3. 执行（把
 
    ```
    你的token
    cpolar authtoken 你的token
    ```
 
-    提示~Authtoken saved~即成功
+   提示~Authtoken saved~即成功
 
 ## 三、创建 Ollama 隧道
 
