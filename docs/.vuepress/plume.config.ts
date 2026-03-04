@@ -52,7 +52,7 @@ export default defineThemeConfig({
   profile: {
     avatar: 'https://cdn.jsdelivr.net/gh/Withnoidea/images/avata.png',
     name: 'Withnoidea',
-    description: 'A man trying to be better.',
+    description: 'pick one thing and go deep',
     circle: true,
     // location: 'Jiangsu',
     // organization: 'Stay at home',

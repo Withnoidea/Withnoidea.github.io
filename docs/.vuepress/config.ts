@@ -17,7 +17,7 @@ export default defineUserConfig({
   base: '/',
   lang: 'zh-CN',
   title: 'Withnoidea',
-  description: 'A man trying to be better.',
+  description: 'pick one thing and go deep',
 
   head: [
     // 配置站点图标
