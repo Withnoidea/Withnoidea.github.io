@@ -1,5 +1,5 @@
 ---
-title: Claude Code for Everyone
+title: Vibe Coding
 tags:
   - AI
 cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260306141515.png
