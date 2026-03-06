@@ -1,8 +1,7 @@
 ---
-titie: Ollama
+title: Ollama配置大模型,chatbox,内网穿透
 tags:
   - AI
-title: Ollama配置大模型,chatbox,内网穿透
 cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260226113117.png
 coverStyle:
   layout: left
