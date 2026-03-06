@@ -19,4 +19,3 @@ ssm: nybatis + spring + SpringMVC
 Model：包含数据+行为
 View
 Controller
-![20260306214004](https://raw.githubusercontent.com/Withnoidea/images/main/20260306214004.png)
