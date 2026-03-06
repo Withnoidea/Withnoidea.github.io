@@ -2,7 +2,7 @@
 titie: Ollama
 tags:
   - AI
-title: Ollama配置大模型,,chatbox,内网穿透
+title: Ollama配置大模型,chatbox,内网穿透
 cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260226113117.png
 coverStyle:
   layout: left
@@ -19,11 +19,9 @@ permalink: /blog/e96a3xfz/
 
 **Ollama 是快速上手并运行大型语言模型最简单的方式**，支持的模型包括 GPT‑OSS、Gemma 3、DeepSeek‑R1、通义千问 3（Qwen3）等。
 
-## 安装模型及使用
+下载地址：[Ollama](https://ollama.com/download/windows)
 
-OIllama下载https://ollama.com/download/windows
-
-安装后通过·ollama run 模型名·安装并使用模型
+## 安装模型
 
 模型下载 ：[Models](https://ollama.com/search)
 
@@ -40,9 +38,17 @@ qwen3:1.7b                          8f68893c685c    1.4 GB    5 weeks ago
 
 ## 本地使用
 
-![image-20260226124116642](https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260226124116642.png)想要在浏览器上使用通ollama下载的本地模型，可下载page assistance插件，点击插件设置->Ollama设置—>添加url即可 url为本地ip地址 + :11434
+安装后通过通过`Ollama run 模型名`即可使用
 
-![image-20260226130240077](https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260226130240077.png)还需要打开ollama设置中的expose ollama to the network
+![image-20260226124116642](https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260226124116642.png)
+
+想要在浏览器上使用ollama下载的本地模型，可下载[page assist](https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa)插件
+
+点击`插件设置->Ollama设置—>添加url即可 (url为本地ip地址 + :11434)`
+
+![image-20260226130240077](https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260226130240077.png)
+
+还需要打开ollama设置中的expose ollama to the network
 
 ![image-20260226130036912](https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260226130036912.png)
 
@@ -70,7 +76,9 @@ qwen3:1.7b                          8f68893c685c    1.4 GB    5 weeks ago
 
    这样电脑依然自动获取，但永远拿到 192.168.86.100最稳定。
 
-   由于可能导致ip冲突，这两个都不推荐
+::: tip
+由于可能导致ip冲突，这两个都不推荐
+:::
 
 - 方法三 **使用 mDNS**
 
@@ -94,15 +102,11 @@ qwen3:1.7b                          8f68893c685c    1.4 GB    5 weeks ago
 
 - 不会 IP 冲突
 
-- 只要在
-
-  同一个家里 WiFi
-
+- 只要在同一个家里 WiFi永远能找到你电脑
+  配置为
   ```
   你的电脑名.local:端口
   ```
-
-  永远能找到你电脑
 
 ## cpolar设置内网穿透
 
