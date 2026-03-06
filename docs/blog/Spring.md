@@ -8,6 +8,7 @@ cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260226020148.p
 coverStyle:
   layout: left
   compact: true
+title: Spring
 ---
 
 ## 1.Spring
