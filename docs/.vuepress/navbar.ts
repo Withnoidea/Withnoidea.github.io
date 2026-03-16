@@ -23,6 +23,8 @@ export default defineNavbarConfig([
     text: '日记',
     items: [
       { text: '日记', link: '/diary/README.md' },
+      { text: '面试问题与答案', link: '/diary/offer.md' },
+      { text: 'README2', link: '/diary/README2.md' },
   ],
   icon: 'material-symbols:date-range'
   },
