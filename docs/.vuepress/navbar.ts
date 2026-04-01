@@ -23,18 +23,17 @@ export default defineNavbarConfig([
     text: '日记',
     items: [
       { text: '日记', link: '/diary/README.md' },
-      { text: '面试问题与答案', link: '/diary/offer.md' },
-      { text: 'README2', link: '/diary/README2.md' },
   ],
   icon: 'material-symbols:date-range'
   },
   {
     text:'计算机语言',
     items:[
-      {text:'C语言',link:'/languages/C/README.md'},
+      {text:'C',link:'/languages/C/README.md'},
       {text:'C++',link:'/languages/C++/README.md'},
       {text:'Python',link:'/languages/Python/README.md'},
       {text:'Java',link:'/languages/Java/README.md'},
+      {text:'C#',link:'/languages/index/README.md'},
     ],
     icon:'material-symbols:code-blocks'
   }

@@ -1,5 +1,5 @@
 ---
-title: C语言
+title: C
 permalink: /languages/C/
 ---
 
