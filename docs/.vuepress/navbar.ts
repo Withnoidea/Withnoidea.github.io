@@ -33,7 +33,7 @@ export default defineNavbarConfig([
       {text:'C++',link:'/languages/C++/README.md'},
       {text:'Python',link:'/languages/Python/README.md'},
       {text:'Java',link:'/languages/Java/README.md'},
-      {text:'C#',link:'/languages/index/README.md'},
+      {text:'C#',link:'/languages/cs/README.md'},
     ],
     icon:'material-symbols:code-blocks'
   }

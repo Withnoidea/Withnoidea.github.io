@@ -1,13 +1,15 @@
 ---
 title: C#
-permalink: /languages/index/
+permalink: /languages/cs/
 ---
 
 # C#教程
 
-# **官方文档：**[概述 - A tour of C# | Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/overview)
+## 官方文档：
 
-# c#简介以及.net
+[概述 - A tour of C# | Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/overview)
+
+## c#简介以及.net
 
 C# 语言是适用于 [.NET](https://learn.microsoft.com/zh-cn/dotnet/csharp/) 平台（免费的跨平台开源开发环境）的最流行语言。 C# 程序可以在许多不同的设备上运行，从物联网 (IoT) 设备到云以及介于两者之间的任何设备。 可为手机、台式机、笔记本电脑和服务器编写应用
 
@@ -19,7 +21,7 @@ C# 是一种强类型语言。
 
 C# 提供[模式匹配](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/functional/pattern-matching)。
 
-## c#领域
+### c#领域
 
 - 桌面应用
 - web开发
@@ -28,18 +30,18 @@ C# 提供[模式匹配](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamen
 - 移动端
 - 其他
 
-## .net运行时的开发框架
+### .net运行时的开发框架
 
 - c#运行时需要.net
 - c#不等于.net .net还支持f#和VB.net
 
-# 开发环境
+## 开发环境
 
-## 下载地址：[Visual Studio IDE - 用于编码调试和测试的 AI](https://visualstudio.microsoft.com/zh-hans/vs/)
+下载地址：[Visual Studio IDE - 用于编码调试和测试的 AI](https://visualstudio.microsoft.com/zh-hans/vs/)
 
-## 安装流程：
+安装流程：
 
-# Hello World
+## Hello World
 
 ```c#
 using System;
@@ -64,7 +66,7 @@ namespace ConsoleApp2
 Console.WriteLine("Hello World");
 ```
 
-## 总结：
+### 总结：
 
 - namespace 是命名空间，用于组织代码，避免命名冲突
 - Main方法是程序入口，需要注意大小写
@@ -73,7 +75,7 @@ Console.WriteLine("Hello World");
 - 每行代码结束后用**;**结尾
 - 注意使用英文半角符号
 
-# 变量和类型
+## 变量和类型
 
 - 元组
 
@@ -83,7 +85,7 @@ Console.WriteLine("Hello World");
 
 ![image-20260401084908640](https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260401084908640.png)
 
-# 语言集成查询
+## 语言集成查询
 
 ```C#
 using System;
@@ -132,7 +134,7 @@ namespace ConsoleApp2
 
 这里的`var`相当于c++中的`auto`
 
-# Q&A
+## Q&A
 
 1. 括号没有高亮显示：
 
