@@ -81,10 +81,6 @@ Console.WriteLine("Hello World");
 
   *元组*是具有可选名称和单个类型的有序固定长度值序列。 将序列括在 `(` 和 `)` 标签中。
 
-![image-20260401084829257](https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260401084829257.png)
-
-![image-20260401084908640](https://cdn.jsdelivr.net/gh/Withnoidea/images/image-20260401084908640.png)
-
 ## 语言集成查询
 
 ```C#
@@ -129,10 +125,156 @@ namespace ConsoleApp2
         }
     }
 }
-
 ```
 
 这里的`var`相当于c++中的`auto`
+
+## MusicDemo
+
+```c#
+namespace MusicDemo
+{
+    internal class Program
+    {
+
+        static List<Song> playLists = new List<Song>();
+        static void Main(string[] args)
+        {
+            playLists.Add(new Song("Blinding Lights", "The Weeknd", 200));
+            playLists.Add(new Song("Shape of You", "Ed Sheeran", 234));
+            playLists.Add(new Song("Someone Like You", "Adele", 285));
+
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("======= MyPlaylist =======");
+                Console.WriteLine("1. 查看歌单");
+                Console.WriteLine("2. 添加歌曲");
+                Console.WriteLine("3. 删除歌曲");
+                Console.WriteLine("0. 退出");
+                Console.Write("请选择：\n");
+
+                string input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "1":
+                        ShowPlaylist();
+                        break;
+                    case "2":
+                        AddSong();
+                        break;
+                    case "3":
+                        DeleteSong();
+                        break;
+                    case "0":
+                        Console.WriteLine("退出程序");
+                        return;
+                    default:
+                        Console.WriteLine("无效输入，请重新选择");
+                        break;
+                }
+            }
+
+            static void AddSong()
+            {
+                Console.WriteLine("===添加歌曲===");
+                //提示用户输入歌曲信息
+                Console.WriteLine("请输入歌名");
+                string title = Console.ReadLine();
+                Console.WriteLine("请输入作者");
+                string artist = Console.ReadLine();
+                Console.WriteLine("请输入时长");
+                int duration;
+                while (!int.TryParse(Console.ReadLine(), out duration) || duration < 0)
+                {
+                    Console.WriteLine("输入的时长无效，请输入一个非负整数（单位：秒）：");
+                }
+                playLists.Add(new Song(title, artist, duration));
+                Console.WriteLine("已添加！");
+            }
+
+
+            static void ShowPlaylist()
+            {
+                Console.WriteLine("===展示歌单===");
+                //如果歌单为空，提示用户
+                if (playLists.Count == 0)
+                {
+                    Console.WriteLine("歌单为空，请添加歌曲");
+                    return;
+                }
+                else
+                {
+                    for (int i = 0; i < playLists.Count; i++)
+                    {
+                        playLists[i].Print(i + 1);
+                    }
+                }
+
+            }
+
+
+
+            static void DeleteSong()
+            {
+                Console.WriteLine("===删除歌曲===");
+                Console.WriteLine("请输入要删除的歌曲的名称");
+                string title = Console.ReadLine();
+                bool found = false;
+                for (int i = 0; i < playLists.Count; i++)
+                {
+                    if (title == playLists[i].Title)
+                    {
+                        playLists.RemoveAt(i);
+                        Console.WriteLine("删除成功");
+                        found = true;
+                        break;
+                    }
+                }
+                if(!found)
+                {
+                    Console.WriteLine("未查询到该歌曲");
+                }
+            }
+        }
+    }
+
+}
+
+
+class Song
+{
+    public string Title { get; set; }
+    public string Artist { get; set; }
+
+    public int Duration { get; set; }
+
+    public Song(string title, string artist, int duration) {
+        Title = title;
+        Artist = artist;
+        Duration = duration;
+    }
+
+    //将Duration转换为3：25格式
+    public string GetDurationText()
+    {
+        return $"{Duration / 60}:{Duration % 60:D2}";
+    }
+
+    public void Print(int index)
+    {
+        Console.WriteLine($"{index}.{Title} - {Artist}  [{GetDurationText()}]");
+    }
+
+
+}
+```
+
+### 后续可优化的点
+
+- 真实场景的音乐的操作
+- 设计前端界面
 
 ## Q&A
 
@@ -166,8 +308,24 @@ namespace ConsoleApp2
 
 4. int[] smallNumbers = numbers[0..5]; 表示的是哪几个？
 
-   **0 to 4左闭右开**
+   表示的是**0 to 4**
 
-5.
+   `numbers[0..5]`是左闭右开`[0,5)`
+
+5. 如何理解public static (string drugId, string batchId) Parse(string code)
+
+   这是元组，意思是这个方法同时返回两个值
+
+   ```c#
+           // 解析追溯码，拆出drugId和batchId
+           public static (string drugId, string batchId) Parse(string code)
+           {
+               if (!IsValid(code))
+                   throw new TraceCodeException(code, $"追溯码格式不正确: {code}");
+
+               string[] parts = code.Split('-');
+               return (parts[1], parts[2]);
+           }
+   ```
 
 6.
