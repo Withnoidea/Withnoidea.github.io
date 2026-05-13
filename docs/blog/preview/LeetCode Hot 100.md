@@ -4,10 +4,6 @@ tags:
   - C++
   - 算法
   - 数据结构
-cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260307145224.png
-coverStyle:
-  layout: left
-  compact: true
 createTime: 2026/03/07 14:49:49
 permalink: /blog/0e14fh3t/
 ---

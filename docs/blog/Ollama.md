@@ -2,10 +2,7 @@
 title: Ollama配置大模型,chatbox,内网穿透
 tags:
   - AI
-cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260226113117.png
-coverStyle:
-  layout: left
-  compact: true
+
 createTime: 2026/02/26 11:29:13
 permalink: /blog/e96a3xfz/
 ---

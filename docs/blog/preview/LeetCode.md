@@ -6,10 +6,6 @@ tags:
   - 数据结构
 createTime: 2026/02/13 13:41:02
 permalink: /blog/pnmc9sjt/
-cover: https://raw.githubusercontent.com/Withnoidea/images/main/20260226144252.png
-coverStyle:
-  layout: left
-  compact: true
 ---
 
 ## 每日一题
