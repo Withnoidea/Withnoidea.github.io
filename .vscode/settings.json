@@ -1,0 +1,13 @@
+{
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.disableLanguages": [],
+  "prettier.documentSelectors": ["**/*.md"],
+  // 关键补充：防止 Prettier 破坏 VuePress 的 Markdown 扩展语法
+  "prettier.markdown.proseWrap": "never",
+  "prettier.markdown.printWidth": 120,
+  "prettier.markdown.htmlWhitespaceSensitivity": "ignore",
+  "prettier.markdown.embeddedLanguageFormatting": "off"
+}
