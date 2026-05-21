@@ -107,7 +107,7 @@ export default defineUserConfig({
       // codeSandbox: true,  // 启用嵌入 codeSandbox 语法 @[codeSandbox](id)
       // jsfiddle: true,     // 启用嵌入 jsfiddle 语法 @[jsfiddle](user/id)
       // npmTo: true,        // 启用 npm-to 容器  ::: npm-to
-      // demo: true,         // 启用 demo 容器  ::: demo
+      demo: true,         // 启用 demo 容器  ::: demo
       collapse: true,     // 启用折叠容器  ::: collapse
       // repl: {             // 启用 代码演示容器
       //   go: true,         // ::: go-repl
@@ -167,7 +167,7 @@ export default defineUserConfig({
     encrypt: {
       // more options...
     }
-    
+
     /**
      * 启用 llmstxt 插件，用于为大语言模型提供更友好的内容
      * @see https://theme-plume.vuejs.press/guide/features/llmstxt/
