@@ -44,5 +44,5 @@ permalink: /blog/du7x5pjz/
 
   > 代码长度限制16 KB | 时间限制400 ms | 内存限制64 MB | 栈限制8192 KB
 :::
-## 思路
+### 思路
 DIjkstra算法
