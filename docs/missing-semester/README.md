@@ -2,8 +2,8 @@
 title: The Missing Semester
 tags:
   - MIT
-permalink: /note/missing-semester/
 createTime: 2026/02/15 22:06:26
+permalink: /missing-semester/
 ---
 
 ## The Missing Semester of Your CS Education
