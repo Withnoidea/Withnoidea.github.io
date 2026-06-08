@@ -1,6 +1,7 @@
 ---
 title: 课程概览与 shell
 permalink: /note/missing-semester/course/
+createTime: 2026/06/08 08:28:41
 ---
 
 `ls -l project` -l?
