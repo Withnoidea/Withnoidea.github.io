@@ -1,7 +1,7 @@
 ---
 title: diary
 permalink: /diary/
-password: 123456
+password: Yangli0513.
 passwordHint: 请输入密码
 ---
 
