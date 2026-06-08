@@ -1,5 +1,5 @@
 ---
-title: The Missing Semester
+title: CS61A
 tags:
   - MIT
 createTime: 2026/06/08 14:26:29
