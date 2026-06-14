@@ -137,6 +137,10 @@ export default defineUserConfig({
      * @see https://theme-plume.vuejs.press/guide/features/watermark/
      */
     // watermark: true,
+    watermark: {
+      // 返回结果为 true 的将启用水印，否则禁用
+      enabled: page => page.path.includes('/article/'),
+    },
 
     /**
      * 评论 comments
