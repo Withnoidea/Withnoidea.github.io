@@ -16,6 +16,7 @@ export default defineNavbarConfig([
     items: [
       { text: 'missing-semester', link: '/missing-semester/README.md' },
       { text: 'cs61a', link: '/cs61a/README.md' },
+      { text: '算法笔记', link: '/algorithm-notes/README.md' },
     ],
     icon: 'material-symbols:stylus-note-rounded'
   },
