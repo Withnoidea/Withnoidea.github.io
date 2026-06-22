@@ -24,6 +24,7 @@ export default defineNavbarConfig([
     text: '日记',
     items: [
       { text: '日记', link: '/diary/README.md' },
+      { text: '减肥日记', link: '/diary/looseweight.md' }
     ],
     icon: 'material-symbols:date-range'
   },

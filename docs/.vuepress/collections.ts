@@ -90,7 +90,7 @@ const algorithmNotes = defineCollection({
   // 文档标题，它将用于在页面的面包屑导航中显示
   title: '算法笔记',
   // 手动配置侧边栏结构
-  sidebar: ['', '01']
+  sidebar: ['', '01', '02']
   // 根据文件结构自动生成侧边栏
   // sidebar: 'auto',
 })
