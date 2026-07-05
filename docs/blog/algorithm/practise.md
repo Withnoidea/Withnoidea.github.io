@@ -183,7 +183,7 @@ int main()
 
 
 
-### [第一个正元素]([待补充链接])
+### [第一个正元素](https://sunnywhy.com/camp/3415/model/4144?itemId=3316)
 
 ::: collapse
 - 点击展开题目
@@ -288,7 +288,7 @@ print(l if l < n else -1)
 :::
 
 
-### [交替最大最小元素]([待补充链接])
+### [交替最大最小元素](https://sunnywhy.com/camp/3415/model/4144?itemId=3317)
 
 ::: collapse
 - 点击展开题目
@@ -405,7 +405,7 @@ print(' '.join(str(x) for x in b))
 :::
 
 
-### [最大分割奇偶乘积]([待补充链接])
+### [最大分割奇偶乘积](https://sunnywhy.com/camp/3415/model/4144?itemId=3329)
 
 ::: collapse
 - 点击展开题目
