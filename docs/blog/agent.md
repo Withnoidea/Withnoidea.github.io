@@ -2,6 +2,7 @@
 title: Agent
 tags:
   - agent
+  - ai
 createTime: 2026/06/26 13:50:03
 permalink: /blog/x9e6kfrp/
 ---
