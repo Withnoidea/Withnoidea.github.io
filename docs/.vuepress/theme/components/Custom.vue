@@ -10,7 +10,7 @@
       </a> -->
       <router-link to="/blog/" class="head-social-avatar">
         <img
-          src="https://cdn.jsdelivr.net/gh/Withnoidea/images/avata.png"
+          src="https://cdn.jsdelivr.net/gh/Withnoidea/images/20260813211356134.png"
           alt="avatar"
         />
       </router-link>
