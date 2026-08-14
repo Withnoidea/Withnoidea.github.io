@@ -7,25 +7,26 @@ createTime: 2026/08/12 17:07:26
 permalink: /blog/dchqjtje/
 ---
 
-ComfyUI 零基础入门：SD1.5 标准基础出图工作流｜原理、接线、踩坑、最佳参数（可长期复用）
 ## 0. 前言
 ComfyUI 基于节点式流水线执行 AI 图像生成，相较于一键式绘图工具，具备完全可拆解、可定制、可迭代的优势。新手入门最大难点为：节点职责混淆、张量链路理解缺失、Latent 与图像通道混淆导致无法出图。
 
 本文记录 SD1.5 官方标准最简可运行工作流，为所有 ComfyUI 高阶玩法（图生图、ControlNet、动画、超分）的底层基座，稳定、通用、无冗余，适合长期复用与进阶学习。
 ## 1. 环境与模型基线
+本地环境
+
 硬件：RTX3060 6G Laptop（显存受限，仅适配 FP16 轻量化模型）
 
 基础模型：v1-5-pruned-emaonly-fp16.safetensors
 
 模型特性：SD1.5 FP16 剪枝精简版，显存占用低、兼容性极强，为新手唯一稳定起步基线。
-## 2. 核心执行原理（流水线架构）
+## 2. 核心执行流程
 SD 生成本质为：文本编码 → 潜空间迭代降噪 → VAE 解码映射至 RGB 图像空间。
 
 ComfyUI 严格遵循链式执行顺序：
 
 模型加载 → 文本条件编码 → 初始化空潜变量画布 → KSampler 迭代降噪 → VAE 解码 → 图像输出保存
 ## 3. 标准工作流节点清单（最小完备集）
-本次可用、无冗余、工业标准基础节点共 6 个：
+工作流节点共 6 个：
 1. CheckpointLoaderSimple（简易模型加载）
 2. CLIPTextEncode ×2（正向/反向文本条件编码）
 3. EmptyLatentImage（空潜变量画布初始化）
@@ -70,10 +71,9 @@ ComfyUI 严格遵循链式执行顺序：
 ![20260812171910742](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260812171910742.png)
 
 接收 RGB 图像张量，执行本地写入与预览输出。
-## 5. 标准固定链路（可永久复用）
+## 5. 完整工作流
 ![20260812172037751](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260812172037751.png)
 
-以下为 SD1.5 官方标准拓扑，不可乱序：
 1. Checkpoint Model → KSampler Model
 2. Checkpoint CLIP → 两个 CLIPTextEncode CLIP 输入端
 3. Checkpoint VAE → VAEDecode VAE
@@ -104,4 +104,20 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 - AnimateDiff 动态视频生成
 - IP-Adapter 风格复刻
 ## 9. 总结
-ComfyUI 的核心不在于“点点出图”，而在于理解扩散模型的计算链路。掌握这套 SD1.5 标准基础工作流，即掌握了所有 AI 绘图节点逻辑的底层范式，后续所有复杂工作流均可基于此结构迭代扩展。
+ComfyUI 的核心不在于出图，而在于理解扩散模型的计算链路。掌握这套 SD1.5 标准基础工作流，即掌握了所有 AI 绘图节点逻辑的底层范式，后续所有复杂工作流均可基于此结构迭代扩展。
+
+## 10. 现成模板使用
+ComfyUI中有许多现成的模板供用户选择，可以在模板界面寻找自己喜欢的模型，根据自己的设备配置判断是否能适配即可，初学者可以将自己的设备配置发给ai，让ai进行分析是否支持。这里推荐一个
+
+点击进入模板
+
+![alt text](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260814105539547.png)
+选择Anima Anime 文生图生成
+![alt text](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260814105957292.png)
+初次进入工作流会提示要下载模型，根据模型链接下载后放到对应文件夹即可填写提示词尝试运行
+## 11. 作品分享
+![1](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260814110220357.png)
+![1](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260814110220358.png)
+![1](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260814110220359.png)
+![1](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260814110220360.png)
+![1](https://cdn.jsdelivr.net/gh/Withnoidea/images/20260814110500095.png)
