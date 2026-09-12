@@ -66,21 +66,23 @@ permalink: /blog/je6kd8om/
        / \ / \
       2  4 6  8
     ```
-
 :::
 
 **思路**
 
-本题要求对二叉树进行「每个节点值加 1」的修改，本质上就是一次**二叉树遍历**——访问树中的每一个节点并做局部修改。常见的先序、中序、后序三种遍历方式都可以完成，区别仅在于「对当前节点做修改」这一步被安排在递归序列中的哪个位置：
+本题要求对二叉树进行「每个节点值加 1」的修改。由于需要访问树中的每一个节点，本质上就是一次**二叉树遍历**。常见的先序、中序、后序三种遍历方式都可以完成本题，区别仅在于"对当前节点做修改"这一步被安排在递归序列中的哪个位置。
 
-- 先序遍历（根 → 左 → 右）：先修改当前节点，再递归左右子树；
-- 中序遍历（左 → 根 → 右）：先递归左子树，再修改当前节点，最后递归右子树；
-- 后序遍历（左 → 右 → 根）：先递归左右子树，最后修改当前节点。
+- **先序遍历（根 → 左 → 右）**：先修改当前节点，再递归左子树，最后递归右子树。
+- **中序遍历（左 → 根 → 右）**：先递归左子树，再修改当前节点，最后递归右子树。
+- **后序遍历（左 → 右 → 根）**：先递归左子树，再递归右子树，最后修改当前节点。
 
-无论哪种顺序，每个节点都**恰好被访问一次**，因此三者时间复杂度均为 $O(n)$（$n$ 为节点总数），空间复杂度取决于递归深度即树高，最坏情况下退化为链 $O(n)$。
+无论哪种顺序，每个节点都**恰好被访问一次**，因此三者的时间复杂度均为 $O(n)$（$n$ 为节点总数），空间复杂度取决于递归深度即树的高度，最坏情况下退化为链 $O(n)$。
+
+**复杂度**：时间复杂度 $O(n)$，空间复杂度 $O(h)$（$h$ 为树高，最坏 $O(n)$）。
 
 ::: code-tabs
 @tab C++
+
 ```cpp
 /**
  * struct TreeNode {
@@ -90,7 +92,6 @@ permalink: /blog/je6kd8om/
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
  * };
  */
-
 
 /**
  * @param root: 二叉树的根节点
@@ -122,11 +123,11 @@ void plusOne(TreeNode* root) {
 
 **相似题目**
 
-- **[226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)**：同样基于遍历对每个节点做局部修改（交换左右子树）。
-- **[144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)**：本题先序实现的基础遍历模板。
-- **[94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)**：中序遍历模板。
-- **[145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)**：后序遍历模板。
-- **[617. 合并二叉树](https://leetcode.cn/problems/merge-two-binary-trees/)**：同时遍历两棵树并对节点做合并修改。
+- [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/) — 同样基于遍历对每个节点做局部修改（交换左右子树）。
+- [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/) — 本题先序实现的基础遍历模板。
+- [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/) — 中序遍历模板。
+- [145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/) — 后序遍历模板。
+- [617. 合并二叉树](https://leetcode.cn/problems/merge-two-binary-trees/) — 同时遍历两棵树并对节点做合并修改。
 
 ---
 
