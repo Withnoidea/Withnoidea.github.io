@@ -2,6 +2,8 @@
 title: 减肥日记
 tags:
   - 减肥
+password: Yangli0513.
+passwordHint: 请输入密码
 ---
 
 
