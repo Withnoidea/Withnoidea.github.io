@@ -8,6 +8,327 @@ createTime: 2026/09/09 12:49:59
 permalink: /blog/je6kd8om/
 ---
 
+### No.13 · 判断满二叉树
+
+::: collapse
+- 点击展开题目
+
+    给定一棵二叉树的根节点 $root$，判断该二叉树是否是满二叉树。
+
+    满二叉树的定义：
+    - 二叉树的每个节点要么没有孩子，要么恰好有两个孩子；
+    - 所有的叶子都在同一层上。
+
+    **样例 1**
+
+    输入
+    ```
+    root = [1,2,3,4,5,6,7]
+    ```
+    输出
+    ```
+    true
+    ```
+    解释：二叉树结构如下：
+    ```
+        1
+       / \
+      2   3
+     / \ / \
+    4  5 6  7
+    ```
+    这棵二叉树是满二叉树。
+
+    **样例 2**
+
+    输入
+    ```
+    root = [1,2,3,4,5,6]
+    ```
+    输出
+    ```
+    false
+    ```
+    解释：二叉树结构如下：
+    ```
+        1
+       / \
+      2   3
+     / \ /
+    4  5 6
+    ```
+    节点 $3$ 只有一个孩子 $6$（缺右孩子），且叶子不在同一层，因此不是满二叉树。
+
+:::
+
+**思路**
+
+核心结论：**高度为 $h$（根在第 $1$ 层）的满二叉树，节点总数一定恰好是 $2^h-1$**。因此只需递归求出树的高度 $h$ 与节点总数 $n$，再验证 $n = 2^h-1$ 即可。
+
+具体步骤：
+1. 定义 `dfs(node, height, count)`：返回以 `node` 为根的子树的高度与节点数。
+   - 空节点：`height = count = 0`。
+   - 非空节点：递归求得左右子树的高度与节点数，则当前子树 `height = max(左高, 右高) + 1`，`count = 左节点数 + 右节点数 + 1`。
+2. 对整棵树调用 `dfs`，得总高度 $h$ 与总节点数 $n$。
+3. 判定 `n == (1 << h) - 1`（即 $2^h-1$）。
+
+关于边界：叶子节点的左右均为空，故其 `height = 1`、`count = 1`，与「根在第 $1$ 层」的约定一致。空树（题目中通常约定返回 `true`，也由 `root == nullptr` 分支直接返回 `true` 处理）。
+
+**复杂度**：时间复杂度 $O(n)$，每个节点访问一次；空间复杂度 $O(h)$，递归栈深度，最坏为树高。
+
+::: code-tabs
+@tab C++
+
+```cpp
+/**
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ * };
+ */
+
+/**
+ * @param root: 二叉树的根节点
+ * @return: 返回布尔值表示是否是满二叉树
+ */
+ void dfs(TreeNode* node, int& height, int& count)
+{
+    if(node == nullptr)
+    {
+        height = count = 0;
+        return;
+    }
+    int leftHeight = 0, leftCount = 0;
+    dfs(node->left, leftHeight, leftCount);
+    int rightHeight = 0, rightCount = 0;
+    dfs(node->right, rightHeight, rightCount);
+
+
+    height = max(leftHeight, rightHeight) + 1;
+    count = leftCount + rightCount + 1;
+}
+
+
+bool isFullTree(TreeNode* root) {
+    if(root == nullptr) return true;
+    int h = 0, n = 0;
+    dfs(root, h, n);
+    return n == (1 << h) - 1;
+}
+```
+:::
+
+**相似题目**
+
+- [222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/) — 本题同样需要先求节点总数，是满二叉树判定的基石。
+- [958. 二叉树的完全性检验](https://leetcode.cn/problems/check-completeness-of-a-binary-tree/) — 与满二叉树判定同属「树形态性质检验」。
+- [110. 平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/) — 同样通过递归求子树高度来做性质判定。
+- [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/) — 本题中 `dfs` 求得的高度即最大深度。
+- [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/) — 二叉树递归遍历的基础模板。
+
+---
+
+### No.12 · 二叉树的逆层序遍历
+
+::: collapse
+- 点击展开题目
+
+    给定一棵二叉树的根节点 $root$，返回该二叉树的「逆层序序列」。所谓「逆层序序列」是指按二叉树从上到下逐层遍历，每层按**从右到左**的顺序输出节点的值。
+
+    **样例 1**
+
+    输入
+    ```
+    root = [1,2,3,null,null,4,5]
+    ```
+    输出
+    ```
+    [1,3,2,5,4]
+    ```
+    解释：二叉树的结构如下：
+    ```
+        1
+       / \
+      2   3
+         / \
+        4   5
+    ```
+    逆层序遍历的顺序为：第一层 $1$，第二层 $3$、$2$，第三层 $5$、$4$。
+
+:::
+
+**思路**
+
+标准层序遍历（BFS）天然就是「从上到下、逐层」地访问节点。要得到「每层从右到左」的顺序，只需在出队时**先将该节点的右孩子入队、再将其左孩子入队**——这样同层内后入队的左孩子会先被访问，等价于该层从右向左输出。
+
+具体算法：
+1. 若 `root == NULL` 直接返回空数组。
+2. 用一个队列 `q`，初始放入 `root`。
+3. 每次取出队首 `current`，将其值加入结果 `res`；**先**判右孩子非空则入队，**后**判左孩子非空则入队。
+4. 队列空时结束，返回 `res`。
+
+由于只是交换了左右孩子的入队顺序，整体仍是一次完整 BFS，时间 $O(n)$、空间 $O(n)$（队列最坏存满一层）。
+
+**复杂度**：时间复杂度 $O(n)$，每个节点入队出队各一次；空间复杂度 $O(n)$，队列最多同时存一层节点。
+
+::: code-tabs
+@tab C++
+
+```cpp
+/**
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ * };
+ */
+
+/**
+ * @param root: 二叉树的根节点
+ * @return: 返回一个数组，表示逆层序遍历结果
+ */
+vector<int> reverseLevelOrder(TreeNode* root) {
+    vector<int> res;
+    if(root == NULL)
+    {
+        return res;
+    }
+
+
+    queue<TreeNode*> q;
+    q.push(root);
+    while(q.size())
+    {
+        TreeNode* current = q.front();
+        q.pop();
+        res.push_back(current->val);
+        if(current->right != NULL)
+        {
+            q.push(current->right);
+        }
+        if(current->left != NULL)
+        {
+            q.push(current->left);
+        }
+    }
+    return res;
+}
+```
+:::
+
+**相似题目**
+
+- [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/) — 本题正序版，是逆层序的基础。
+- [107. 二叉树的层序遍历 II](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/) — 自底向上层序遍历，方向变体。
+- [103. 二叉树的锯齿形层序遍历](https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/) — 每层交替方向的层序遍历。
+- [199. 二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/) — 优先关注右侧节点的 BFS 实践。
+- [429. N 叉树的层序遍历](https://leetcode.cn/problems/n-ary-tree-level-order-traversal/) — 队列层序遍历的拓展。
+
+---
+
+### No.11 · 移除二叉树的叶节点
+
+::: collapse
+- 点击展开题目
+
+    给定一棵二叉树的根节点 $root$，你需要移除这棵树的所有叶节点。叶节点是指没有子节点的节点。移除叶节点后，如果新的叶节点产生，不需要再次移除（即只需要移除原始树的叶节点）。
+
+    **样例 1**
+
+    输入
+    ```
+    root = [1,2,3,4,5]
+    ```
+    输出
+    ```
+    [1,2]
+    ```
+    解释：原始二叉树如下：
+    ```
+        1
+       / \
+      2   3
+     / \
+    4   5
+    ```
+    原始叶节点为 $3$、$4$、$5$，将其移除后，树变为：
+    ```
+      1
+     /
+    2
+    ```
+    （节点 $2$ 原本不是叶节点，移除其子节点后沦为叶节点，按题意不再处理。）
+
+:::
+
+**思路**
+
+本题要求**只删除原始树中的叶节点**，删除后即使产生新的叶节点也不再处理。这等价于：遍历时只对「当前节点的直接孩子」做叶节点判定——若孩子是叶子则删除，否则继续向下递归；**不向上回看**保证了新产生的叶节点不会被二次删除。
+
+采用深度优先搜索（递归）实现：
+1. **递归边界**：`root == NULL` 时直接返回。
+2. **处理左子树**：若 `root->left` 存在且其左右孩子均为空（即它是叶节点），则 `delete root->left` 并将其置空；否则递归 `removeLeaf(root->left)`。
+3. **处理右子树**：同理处理 `root->right`。
+
+原始叶节点必在其父节点处被判定为叶子并删除；删除后沦为叶的内部节点不会再被其父节点回溯检查，因此恰好只移除一次、只移除原始叶节点，满足题意。
+
+**复杂度**：时间复杂度 $O(n)$，每个节点最多访问一次；空间复杂度 $O(h)$，$h$ 为树高，即递归调用栈深度（最坏 $O(n)$，平衡时 $O(\log n)$）。
+
+::: code-tabs
+@tab C++
+
+```cpp
+/**
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ * };
+ */
+
+/**
+ * @param root: 二叉树的根节点指针
+ * @return: 无返回值，直接在原树上修改
+ */
+void removeLeaf(TreeNode* root) {
+    if(root == NULL) return;
+
+
+    //递归处理左子树
+    if(root->left != NULL && root->left->left == NULL && root->left->right == NULL)
+    {
+        delete root->left;
+        root->left = NULL;
+    }else{
+        removeLeaf(root->left);
+    }
+
+
+    if(root->right != NULL && root->right->left == NULL && root->right->right == NULL)
+    {
+        delete root->right;
+        root->right = NULL;
+    }else{
+        removeLeaf(root->right);
+    }
+}
+```
+:::
+
+**相似题目**
+
+- [1325. 删除给定值的叶子节点](https://leetcode.cn/problems/delete-leaves-with-a-given-value/) — 按给定值删除叶节点的变体，思想高度相似。
+- [814. 二叉树剪枝](https://leetcode.cn/problems/binary-tree-pruning/) — 按条件递归删除子树，递归删除思想一致。
+- [1110. 删除节点并返回森林](https://leetcode.cn/problems/delete-nodes-and-return-forest/) — 删除指定节点并重构多棵树。
+- [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/) — 二叉树递归遍历的基础模板。
+- [257. 二叉树的所有路径](https://leetcode.cn/problems/binary-tree-paths/) — 深度优先搜索遍历的经典实践。
+
+---
+
 ### No.10 · 二叉树节点值加一
 
 ::: collapse
