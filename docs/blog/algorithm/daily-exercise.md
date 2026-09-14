@@ -8,6 +8,389 @@ createTime: 2026/09/09 12:49:59
 permalink: /blog/je6kd8om/
 ---
 
+### No.16 · 二叉查找树的最值路径节点数
+
+::: collapse
+- 点击展开题目
+
+    给定一棵二叉查找树（BST），其中所有节点的值都是唯一的。请计算从树中值最小的节点出发，到值最大的节点的路径上，至少需要经过多少个中间节点（不包括最小和最大节点本身）。
+
+    **输入描述**
+    - 一棵二叉查找树的根节点 `root`（节点值唯一，通过 `TreeNode` 结构体给出）。
+
+    **输出描述**
+    返回从最小节点到最大节点的路径上中间节点的数量（不包括最小和最大节点本身）。
+
+    **样例 1**
+
+    输入
+    ```
+    root = [3,1,4,null,2]
+    ```
+    输出
+    ```
+    1
+    ```
+    解释：给定的 BST 结构如下：
+    ```
+        3
+       / \
+      1   4
+       \
+        2
+    ```
+    - 最小节点是 $1$
+    - 最大节点是 $4$
+    - 从 $1$ 到 $4$ 的路径是 $1\to 3\to 4$，中间经过的节点是 $3$，共 $1$ 个节点
+
+:::
+
+**思路**
+
+本题的核心在于理解 BST 中**最值节点的位置**与**最值之间的路径形态**：
+
+- 在 BST 中，最小值一定是最左节点——从根节点开始一直向左走，直到左子树为空；最大值一定是最右节点——从根节点开始一直向右走，直到右子树为空；
+- 由于最小值位于根的左子树、最大值位于根的右子树，二者的最低公共祖先（LCA）必为根节点，因此从最小节点到最大节点的唯一简单路径必然经过根；
+- 设根到最小节点的边数为 $d_1$（一路向左的步数），根到最大节点的边数为 $d_2$（一路向右的步数），路径上节点总数为 $d_1+d_2+1$（含根），去掉首尾的最小、最大节点，中间节点数即为 $d_1+d_2-1$；
+- 边界：当树只有一个节点时，最小与最大节点重合（$d_1=d_2=0$），直接返回 $0$。
+
+时间复杂度 $O(h)$（$h$ 为树高，最多各下降一次），空间复杂度 $O(1)$。
+
+::: code-tabs
+@tab C++
+```cpp
+/**
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ * };
+ */
+
+
+/**
+ * @param root: 二叉树的根节点
+ * @return: 从最小节点到最大节点的路径上中间节点的数量（不包括最小和最大节点本身）
+ */
+int minMaxPathCount(TreeNode* root) {
+    int d1 = 0;
+    TreeNode* node = root;
+    while(node->left != NULL)
+    {
+        node = node->left;
+        d1 ++;
+    }
+    int d2 = 0;
+    node = root;
+    while(node->right != NULL)
+    {
+        node = node->right;
+        d2 ++;
+    }
+    if(d1 + d2 == 0)
+    {
+        return 0;
+    }
+    return d1 + d2 - 1;
+}
+```
+:::
+
+**相似题目**
+- [98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/) — 理解 BST 的左右有序性质，是本题的基础。
+- [235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/) — 同样利用 BST 有序性定位两节点路径与 LCA。
+- [230. 二叉搜索树中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/) — 最小值节点即「第 1 小」，对应最左节点。
+- [700. 二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/) — 沿左/右方向下降导航，与本题找最值思路一致。
+- [783. 二叉搜索树节点最小距离](https://leetcode.cn/problems/minimum-distance-between-bst-nodes/) — 同样围绕 BST 中序相邻（最小/最大）节点关系。
+
+---
+
+### No.15 · 二叉查找树中序判定
+
+::: collapse
+- 点击展开题目
+
+    给定一个长度为 $n$ 的整数序列，判断该序列是否可能是某棵二叉查找树（BST）的中序遍历序列。
+
+    二叉查找树（BST）的定义如下：
+    - 对于任意结点，其左子树中所有结点的值都小于或等于该结点的值；
+    - 对于任意结点，其右子树中所有结点的值都大于该结点的值；
+    - 左右子树也必须是二叉搜索树。
+
+    **输入描述**
+    - 第一行一个整数 $n$（$1\le n\le 1000$），表示序列长度；
+    - 第二行包含 $n$ 个用空格分隔的整数 $a_i$（$1\le a_i\le 10^4$），表示给定的序列。
+
+    **输出描述**
+    如果该序列可能是某棵二叉查找树的中序遍历序列，输出 `YES`；否则输出 `NO`。
+
+    **样例 1**
+
+    输入
+    ```
+    2
+    1 2
+    ```
+    输出
+    ```
+    YES
+    ```
+    解释：可以构造如下二叉查找树，其中序遍历为 `[1, 2]`：
+    ```
+      2
+     /
+    1
+    ```
+
+    **样例 2**
+
+    输入
+    ```
+    3
+    2 1 3
+    ```
+    输出
+    ```
+    NO
+    ```
+    解释：无法构造出满足条件的二叉查找树。
+
+:::
+
+**思路**
+
+本题的核心在于利用**二叉查找树的性质**：BST 的中序遍历序列一定是（非严格）升序的。
+
+- 由于左子树 $\le$ 根 $\le$ 右子树，且左右子树也满足 BST，整棵树的中序遍历必然单调不减；
+- 反过来，任意一个单调不减的序列，都可以「取中段为根、左段为左子树、右段为右子树」递归构造出对应的 BST（相等值挂在左子树即可）；
+- 因此判定等价于**检查序列是否非递减**：从左到右扫描，一旦出现 $a_i < a_{i-1}$ 即不合法。
+
+时间复杂度 $O(n)$（一遍扫描），空间复杂度 $O(n)$（读入数组；也可边读边比做到 $O(1)$）。
+
+::: code-tabs
+@tab C++
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1010;
+int a[N];
+int n;
+
+int main()
+{
+    cin >> n;
+    a[0]= -1;
+    bool flag = true;
+    for(int i = 1; i <= n; i ++)
+    {
+        cin >> a[i];
+        if(a[i] < a[i - 1]) flag = false;
+    }
+    cout << (flag ? "YES" : "NO") << "\n";
+    return 0;
+}
+```
+:::
+
+**相似题目**
+- [98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/) — 反过来：判断一棵给定树是否为 BST，同样依赖中序升序性质。
+- [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/) — 中序遍历的基础模板，是理解本题的前提。
+- [700. 二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/) — 利用 BST 有序性的典型操作。
+- [701. 二叉搜索树中的插入操作](https://leetcode.cn/problems/insert-into-a-binary-search-tree/) — 在保持 BST 性质下插入节点。
+- [230. 二叉搜索树中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/) — 取中序遍历的第 k 个，直接利用升序性质。
+
+---
+
+### No.14 · 树的层次和
+
+::: collapse
+- 点击展开题目
+
+    现有一棵 $n$ 个结点的树（结点编号为从 `0` 到 `n-1`，根结点为 `0` 号结点），每个结点有各自的权值 $w$。求这棵树每层的节点权值之和。
+
+    提示可以练习分别用层次遍历和先根遍历解决本题。
+
+    **输入描述**
+    - 第一行一个整数 $n$（$1\le n\le 10^{3}$），表示树的结点个数；
+    - 第二行 $n$ 个整数，分别给出编号从 `0` 到 `n-1` 的 $n$ 个结点的权值 $w$（$1\le w\le 10^{3}$）；
+    - 接下来 $n$ 行，按节点编号从小到大的顺序，每行给出一个结点的子结点编号列表，格式如下：
+      ```
+      k child_1 child_2 ... child_k
+      ```
+      其中 $k$（$0\le k\le n-1$）表示该结点的子结点个数，`child_1`…`child_k` 表示子结点的编号。
+
+    **输出描述**
+    输出 $m$ 行（$m$ 为层数），按层号从上到下的顺序，每层输出一个整数，表示该层的节点权值之和。
+
+    **样例 1**
+
+    输入
+    ```
+    5
+    1 2 3 4 5
+    1 1
+    3 2 3 4
+    0
+    0
+    0
+    ```
+    输出
+    ```
+    1
+    2
+    12
+    ```
+    解释：树的结构如下：
+    ```
+        0
+        |
+        1
+       /|\
+      2 3 4
+    ```
+    - 第 1 层：只有节点 0，权值和为 1
+    - 第 2 层：节点 1，权值和为 2
+    - 第 3 层：节点 2、3、4，权值和为 3+4+5=12
+
+:::
+
+**思路**
+
+本题求「每层的节点权值之和」，本质是树的**层次遍历（BFS）**，也可以先根遍历（DFS）配合深度标记来做。
+
+**BFS 解法（本题给出）**
+1. 用数组 `nodes[N]` 存储每个结点的权值 `data` 与子结点列表 `children`；下标即结点编号。
+2. 将根结点 `0` 入队。
+3. `while` 队列非空时，先用 `levelSize = q.size()` 记录当前层节点数，初始化 `levelSum = 0`；循环 `levelSize` 次：取出队首 `u`，将其权值累加进 `levelSum`，并把 `u` 的所有子结点入队。
+4. 一层处理完即输出 `levelSum`（换行）。
+关键在于「先记录层大小、再循环固定次数」的写法，确保一次循环只处理同一层的节点。
+
+**DFS 解法（提示）**
+先根遍历时额外携带「当前深度 `depth`」：进入结点时把 `sum[depth] += data`，再递归遍历子结点（深度 `depth+1`）。遍历结束后按 `depth` 从小到大输出 `sum[]` 即可。
+
+**复杂度**：
+- 时间复杂度：$O(n)$，每个结点入队/访问一次。
+- 空间复杂度：$O(n)$，队列/递归栈最坏存 $O(n)$ 个结点。
+
+::: code-tabs
+@tab C++ (BFS)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1010;
+
+struct Node
+{
+  int data;
+  vector<int> children;
+} nodes[N];
+
+int main()
+{
+  int n, k, child;
+  cin >> n;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> nodes[i].data;
+  }
+  for (int i = 0; i < n; i++)
+  {
+    cin >> k;
+    for (int j = 0; j < k; j++)
+    {
+      cin >> child;
+      nodes[i].children.push_back(child);
+    }
+  }
+
+  queue<int> q;
+  q.push(0);
+  while(q.size())
+  {
+      int levelSize = q.size();
+      int levelSum = 0;
+      for(int i = 0; i < levelSize; i ++)
+      {
+          int u = q.front();
+          q.pop();
+          levelSum += nodes[u].data;
+
+          for(int j = 0; j < nodes[u].children.size(); j ++)
+          {
+              q.push(nodes[u].children[j]);
+          }
+      }
+      cout << levelSum << "\n";
+  }
+
+  return 0;
+}
+```
+
+@tab C++ (DFS)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1010;
+
+struct Node
+{
+  int data;
+  vector<int> children;
+} nodes[N];
+
+int levelSum[N];
+int maxLevel;
+
+void dfs(int u, int level)
+{
+    levelSum[level] += nodes[u].data;
+    if(level > maxLevel) maxLevel = level;
+    for(int i = 0; i < nodes[u].children.size(); i ++)
+    {
+        dfs(nodes[u].children[i], level + 1);
+    }
+}
+
+int main()
+{
+  int n, k, child;
+  cin >> n;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> nodes[i].data;
+  }
+  for (int i = 0; i < n; i++)
+  {
+    cin >> k;
+    for (int j = 0; j < k; j++)
+    {
+      cin >> child;
+      nodes[i].children.push_back(child);
+    }
+  }
+
+  dfs(0, 0);
+  for(int i = 0; i <= maxLevel; i ++)
+  {
+      cout << levelSum[i] << "\n";
+  }
+
+  return 0;
+}
+```
+:::
+
+**相似题目**
+- [429. N 叉树的层序遍历](https://leetcode.cn/problems/n-ary-tree-level-order-traversal/) — 与本题同为多叉树按层遍历，思想一致。
+- [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/) — 二叉树版层次遍历，是本题基础。
+- [637. 二叉树的层平均值](https://leetcode.cn/problems/average-of-levels-in-binary-tree/) — 同样是按层聚合节点信息（求平均）。
+- [515. 在每个树行中找最大值](https://leetcode.cn/problems/find-largest-value-in-each-tree-row/) — 每层聚合（取最大值）的变体。
+- [199. 二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/) — 层次遍历中关注每层特定位置节点。
+
+---
+
 ### No.13 · 判断满二叉树
 
 ::: collapse
