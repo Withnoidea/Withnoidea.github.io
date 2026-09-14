@@ -8,6 +8,96 @@ createTime: 2026/09/09 12:49:59
 permalink: /blog/je6kd8om/
 ---
 
+### No.17 · 森林中的最大树数
+
+::: collapse
+- 点击展开题目
+
+    森林由若干棵树组成，共 $n$ 个节点。现在给出 $m$ 组关系，每组关系指出节点 $a$ 和节点 $b$ 属于同一棵树。问森林中至多可能有多少棵树。
+
+    **输入描述**
+    - 第一行包含两个整数 $n$ 和 $m$（$1\le n\le 10^4$，$0\le m\le 10^4$），分别表示节点的总数量（节点编号从 $1$ 到 $n$）和关系数量；
+    - 接下来 $m$ 行，每行包含两个整数 $a$ 和 $b$（$1\le a, b\le n$，$a\ne b$），表示节点 $a$ 和节点 $b$ 属于同一棵树。
+
+    **输出描述**
+    输出一个整数，表示森林中至多可能有多少棵树。
+
+    **样例 1**
+
+    输入
+    ```
+    5 3
+    1 2
+    2 3
+    4 5
+    ```
+    输出
+    ```
+    2
+    ```
+    解释：$1$、$2$、$3$ 属于同一棵树，$4$、$5$ 属于同一棵树，因此至多有两棵树。
+
+:::
+
+**思路**
+
+本题的核心是理解「森林中的树」与「连通块」的等价关系，并用并查集（Union-Find）维护连通性：
+
+- 森林中每一棵树都是一个单独的连通块，题目问的「最多有多少棵树」实质上就是问「有多少个连通块」；
+- 初始时每个节点自成一个集合，连通块（树）数量为 $cnt=n$，并令 `parent[i] = i`；
+- 对每对关系 $(a, b)$ 执行合并：分别找到 $root_a$、$root_b$。若根不同，说明二者原本属于不同的树，合并后树的数量 $cnt$ 减少 $1$；若根相同，则已在同一棵树中，跳过；
+- 处理完所有关系后，$cnt$ 即为连通块数量，也就是森林中树的最大数量。
+
+时间复杂度 $O(m\cdot\alpha(n)+n)$（$\alpha(n)$ 为阿克曼反函数，实际可视为常数），空间复杂度 $O(n)$。
+
+::: code-tabs
+@tab C++
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 10010;
+int p[N];
+int cnt;
+
+int find(int x)
+{
+    if(p[x] != x) p[x] = find(p[x]);
+    return p[x];
+}
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    cnt = n;
+    for(int i = 1; i <= n; i ++)
+        p[i] = i;
+    
+    while(m --)
+    {
+        int a, b;
+        cin >> a >> b;
+        if(find(a) != find(b))
+        {
+            p[find(a)] = find(b);
+            cnt --;
+        }
+    }
+    cout << cnt << "\n";
+    return 0;
+}
+```
+:::
+
+**相似题目**
+- [547. 省份数量](https://leetcode.cn/problems/number-of-provinces/) — 连通块计数的经典模板，与本题几乎同构。
+- [200. 岛屿数量](https://leetcode.cn/problems/number-of-islands/) — 网格中的连通块计数，DFS/BFS 或并查集均可。
+- [684. 冗余连接](https://leetcode.cn/problems/redundant-connection/) — 并查集判定环，合并时检测同根。
+- [1319. 连通网络的操作次数](https://leetcode.cn/problems/number-of-operations-to-make-network-connected/) — 同样基于连通块数与边的关系。
+- [990. 等式方程的可满足性](https://leetcode.cn/problems/satisfiability-of-equality-equations/) — 并查集合并等价关系，再检测冲突。
+
+---
+
 ### No.16 · 二叉查找树的最值路径节点数
 
 ::: collapse
@@ -1446,7 +1536,7 @@ void makeSymmetric(ListNode* head) {
 ::: collapse
 - 点击展开题目
 
-    给定长度为 $n$ 的整数数组 $a$。允许对每个元素做**至多一次**调整：将值增加、减少或不变，但变化幅度**最多为 $1$。
+    给定长度为 $n$ 的整数数组 $a$。允许对每个元素做**至多一次**调整：将值增加、减少或不变，但变化幅度最多为 $1$。
 
     问是否存在一种调整方案，使得调整后所有元素**两两互不相同**。存在输出 `Yes`，否则输出 `No`。
 
