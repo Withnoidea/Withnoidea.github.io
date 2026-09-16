@@ -8,6 +8,258 @@ createTime: 2026/09/09 12:49:59
 permalink: /blog/je6kd8om/
 ---
 
+### No.19 · 判断二叉堆
+
+::: collapse
+- 点击展开题目
+
+    给定一棵完全二叉树，判断这棵完全二叉树是否是堆。如果不满足堆的性质，返回 $0$；如果满足堆的性质，进一步判断是大顶堆（返回 $1$）还是小顶堆（返回 $2$）。
+
+    **输入描述**
+    - 一棵完全二叉树的根节点 `root`（通过 `TreeNode` 结构体给出）。
+
+    **输出描述**
+    - 返回 $0$（非堆）、$1$（大顶堆）或 $2$（小顶堆）。
+
+    **样例 1**
+
+    输入
+    ```
+    root = [10,8,9,5,3,6,7]
+    ```
+    输出
+    ```
+    1
+    ```
+    解释（满足大顶堆的性质）：
+    ```
+          10
+         /  \
+        8    9
+       / \  / \
+      5  3 6  7
+    ```
+
+    **样例 2**
+
+    输入
+    ```
+    root = [2,3,4,5,6,7,8]
+    ```
+    输出
+    ```
+    2
+    ```
+    解释（满足小顶堆的性质）：
+    ```
+          2
+         /  \
+        3    4
+       / \  / \
+      5  6 7  8
+    ```
+
+    **样例 3**
+
+    输入
+    ```
+    root = [1,2,6,4,5,3]
+    ```
+    输出
+    ```
+    0
+    ```
+    解释（既不是大顶堆，也不是小顶堆）：
+    ```
+          1
+         /  \
+        2    6
+       / \  /
+      4  5 3
+    ```
+
+:::
+
+**思路**
+
+首先明确堆的定义：堆是一棵完全二叉树，其中所有节点均满足父子之间的大小关系。具体来说：
+- 大顶堆：每个节点的值都大于或等于其子节点；
+- 小顶堆：每个节点的值都小于或等于其子节点。
+
+因此，我们只需对树进行一次遍历，检查每个节点是否满足上述性质，即可判断出是哪种堆。
+
+我们分别定义两个标志变量：`isMaxHeap` 和 `isMinHeap`。初始时两者都为 `true`，表示当前树可能是大顶堆也可能是小顶堆。
+
+在递归遍历的过程中，对于每个节点，分别检查它与左右子节点的值：
+- 如果某个节点的值小于任意一个子节点的值，那么不满足大顶堆的定义，将 `isMaxHeap` 标记为 `false`；
+- 如果某个节点的值大于任意一个子节点的值，那么不满足小顶堆的定义，将 `isMinHeap` 标记为 `false`。
+
+通过这种方式持续向下遍历，如果发现某个时刻 `isMaxHeap` 和 `isMinHeap` 同时变为 `false`，说明该树不满足任何一种堆的定义，递归即可提前终止，减少不必要的计算。
+
+递归函数遍历整棵树完成后，检查标志变量：
+- 若 `isMaxHeap` 为 `true`，说明该树满足大顶堆（返回 $1$）；
+- 若 `isMinHeap` 为 `true`，说明该树满足小顶堆（返回 $2$）；
+- 若两个标志都为 `false`，说明既不是大顶堆也不是小顶堆（返回 $0$）。
+
+复杂度：DFS 会访问树的每个节点一次，时间复杂度 $O(n)$（$n$ 为节点数）。递归调用栈深度最坏与树高相关；对于完全二叉树，树高为 $O(\log n)$，因此空间复杂度 $O(\log n)$。
+
+::: code-tabs
+@tab C++
+```cpp
+// 递归 DFS 辅助函数，检查与子节点的大小关系
+void dfs(TreeNode* node, bool &isMaxHeap, bool &isMinHeap) {
+    if (node == NULL || (!isMaxHeap && !isMinHeap)) {      // 到达叶子或不可能为任何堆时停止
+        return;
+    }
+
+    if (node->left) {                                         // 检查左子节点
+        if (node->val < node->left->val)  isMaxHeap = false;  // 父<左，不满足大顶堆
+        if (node->val > node->left->val)  isMinHeap = false;  // 父>左，不满足小顶堆
+    }
+
+    if (node->right) {                                        // 检查右子节点
+        if (node->val < node->right->val) isMaxHeap = false;  // 父<右，不满足大顶堆
+        if (node->val > node->right->val) isMinHeap = false;  // 父>右，不满足小顶堆
+    }
+
+    dfs(node->left, isMaxHeap, isMinHeap);                   // 递归左子树
+    dfs(node->right, isMaxHeap, isMinHeap);                   // 递归右子树
+}
+
+int isHeap(TreeNode* root) {
+    bool isMaxHeap = true;   // 标记是否可能为大顶堆
+    bool isMinHeap = true;   // 标记是否可能为小顶堆
+
+    dfs(root, isMaxHeap, isMinHeap);                            // 从根开始检查
+
+    if (isMaxHeap) return 1;  // 大顶堆
+    else if (isMinHeap) return 2;  // 小顶堆
+    else return 0;  // 既不是大顶堆也不是小顶堆
+}
+```
+:::
+
+**相似题目**
+- [1046. 最后一块石头的重量](https://leetcode.cn/problems/last-stone-weight/) — 经典大顶堆（优先队列）应用。
+- [215. 数组中的第 K 个最大元素](https://leetcode.cn/problems/kth-largest-element-in-an-array/) — 堆排序 / 大顶堆选第 K 大。
+- [703. 数据流中的第 K 大元素](https://leetcode.cn/problems/kth-largest-element-in-a-stream/) — 小顶堆维护 Top-K。
+- [347. 前 K 个高频元素](https://leetcode.cn/problems/top-k-frequent-elements/) — 堆（优先队列）取前 K 项。
+- [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/) — 小顶堆合并多个有序序列。
+
+---
+
+### No.18 · 判断完全二叉树
+
+::: collapse
+- 点击展开题目
+
+    给定一棵二叉树的根节点 $root$，判断这棵二叉树是否是完全二叉树。
+
+    完全二叉树的定义如下：
+    1. 除了最后一层外，其他层的节点数都达到最大值；
+    2. 最后一层的节点都集中在左侧。
+
+    **输入描述**
+    - 一棵二叉树的根节点 `root`（通过 `TreeNode` 结构体给出）。
+
+    **输出描述**
+    如果是完全二叉树返回 `true`，否则返回 `false`。
+
+    **样例 1**
+
+    输入
+    ```
+    root = [1,2,3,4,5,6]
+    ```
+    输出
+    ```
+    true
+    ```
+    解释：
+    ```
+        1
+       / \
+      2   3
+     / \ /
+    4  5 6
+    ```
+    这是一棵完全二叉树，因为：前两层节点数达到最大值；最后一层的节点全部靠左排列。
+
+    **样例 2**
+
+    输入
+    ```
+    root = [1,2,3,4,5,null,6]
+    ```
+    输出
+    ```
+    false
+    ```
+    解释：
+    ```
+        1
+       / \
+      2   3
+     / \   \
+    4   5   6
+    ```
+    这不是完全二叉树，因为第三层的节点 `6` 出现在空节点之后。
+
+:::
+
+**思路**
+
+判断一棵二叉树是否为完全二叉树的本质，就是检查树的各层节点是否满足两个条件：除了最后一层外，每层的节点必须是满的；而最后一层的节点则必须尽可能靠左，不能出现左侧有空节点而右侧却出现非空节点的情况。
+
+所以最清晰、直观的解法就是采用 **层序遍历**（BFS）的方式，逐层从左到右扫描整棵树，按照定义依次检查节点排列是否满足完全二叉树的性质。
+
+具体来说，我们维护一个队列 `q`，初始化时把根节点 `root` 加入队列中。然后开始循环执行以下操作：每次从队头取出一个节点：
+- 如果取出的节点为空（即遇到空节点），则标记当前已经遇到过空节点，从这一刻起，后续队列中的节点都必须是空节点，否则就违背了完全二叉树的规则，也即后面不能再出现非空节点；
+- 如果取出的节点不为空，且到目前为止还没有遇到过空节点，那么则将它的左右子节点（可能是空节点）依次加入队尾，以便继续检查后续节点；
+- 如果取出的节点不为空，但已经遇到过空节点，那么说明违反完全二叉树的性质，直接返回 `false` 即可。
+
+如果层序遍历能正常结束，那么说明过程中没有出现违反完全二叉树性质的情况，于是返回 `true`。
+
+这种方法的时间复杂度为 $O(n)$（$n$ 为树的节点个数）。空间复杂度为 $O(n)$，最坏情况下队列可能存储树的最后一层节点，节点数最多接近 $n/2$。
+
+::: code-tabs
+@tab C++
+```cpp
+bool isCompleteTree(TreeNode* root) {
+    queue<TreeNode*> q;               // 用于层序遍历的队列
+    q.push(root);                     // 入队根节点
+
+    bool foundNull = false;           // 标记是否已遇到空节点
+
+    while (!q.empty()) {
+        TreeNode* node = q.front();   // 取队头
+        q.pop();                      // 出队
+
+        if (node == NULL) {
+            foundNull = true;         // 一旦遇到空节点，设置标记
+        } else {
+            if (foundNull) {          // 如果之前已遇到空节点
+                return false;         // 但现在又遇非空节点，非完全二叉树
+            }
+            q.push(node->left);       // 左孩子入队
+            q.push(node->right);      // 右孩子入队
+        }
+    }
+
+    return true;                      // 完全二叉树
+}
+```
+:::
+
+**相似题目**
+- [958. 二叉树的完全性检验](https://leetcode.cn/problems/check-completeness-of-a-binary-tree/) — 与本题几乎完全同构（题面即此题）。
+- [222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/) — 利用完全二叉树结构特性加速计数。
+- [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/) — 本题 BFS 思路的基础模板。
+- [662. 二叉树最大宽度](https://leetcode.cn/problems/maximum-width-of-binary-tree/) — 同样基于层序给节点编号，关注空节点位置。
+- [199. 二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/) — 层序遍历中关注每层特定位置节点。
+
+---
+
 ### No.17 · 森林中的最大树数
 
 ::: collapse
