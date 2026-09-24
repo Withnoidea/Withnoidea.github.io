@@ -31,3 +31,12 @@ passwordHint: 请输入密码
 写20道相关真题
 
 英语单词过一章
+
+
+## 小目标
+
+atcoder abc ak一次（无ai辅助
+
+codeforces 1500+ 参加10次以上
+
+kaggle 完赛一次
